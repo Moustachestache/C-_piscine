@@ -1,0 +1,8 @@
+#ignore
+*.swp
+*.o
+
+#allow
+!*.cpp
+!*.hpp
+!Makefile

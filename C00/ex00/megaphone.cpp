@@ -6,7 +6,7 @@
 /*   By: mjochum <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 08:38:22 by mjochum           #+#    #+#             */
-/*   Updated: 2024/03/18 12:18:05 by mjochum          ###   ########.fr       */
+/*   Updated: 2024/03/19 14:24:24 by mjochum          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,3 +30,4 @@ int	main(int argc, char **argv)
 		ft_uppercase(argv[i]);
 	std::cout << std::endl;
 }
+
