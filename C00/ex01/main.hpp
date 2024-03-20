@@ -13,7 +13,10 @@
 #ifndef MAIN_HPP
 # define MAIN_HPP
 
-# include PhoneBook.class.hpp
-# include Contact.class.hpp
+# include <string>
+# include <iostream>
+# include <sstream>
+# include "Contact.class.hpp"
+# include "PhoneBook.class.hpp"
 
 #endif

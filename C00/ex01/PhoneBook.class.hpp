@@ -12,7 +12,20 @@
 
 #ifndef PHONEBOOK_CLASS_HPP
 # define PHONEBOOK_CLASS_HPP
+# include "main.hpp"
 
+class PhoneBook
+{
+    public:
+        PhoneBook(void);
+        ~PhoneBook(void);
+        void add(void);
+        void search(void);
+        void getIndex(void);
 
+    private:
+        int count;
+        Contact contacts[8];
+};
 
 #endif

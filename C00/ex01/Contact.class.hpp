@@ -12,12 +12,14 @@
 
 #ifndef CONTACT_CLASS_HPP
 # define CONTACT_CLASS_HPP
+# include "main.hpp"
 
 class Contact
 {
 	public:
 		Contact(void);
 		~Contact(void);
+		void	addContact(void);
 		
 	private:
 		std::string	_fname;

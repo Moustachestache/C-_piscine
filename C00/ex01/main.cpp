@@ -17,17 +17,19 @@ int	main(int argc, char **argv)
 	PhoneBook	phonebook;
 	std::string	input;
 
+	(void) argv;
 	if (argc > 1)
 		return (1);
+	std::cout << "Welcome to PhoneBook v0.0.12" << std::endl << "ADD, SEARCH, EXIT" << std::endl;
+	std::cin >> input;
 	while (input != "EXIT")
 	{
-		std::cin >> input;
 		if (input == "ADD")
 			phonebook.add();
 		else if (input == "SEARCH")
 			phonebook.search();
 		else
-			std::cout << "Error: Invalid command \"" + input + "\"" + std::endl;
-			std::cout << "Usage: ADD, SEARCH, EXIT." + std::endl;
+			std::cout << "Error: Invalid command \"" << input << "\"" << std::endl << "Usage: ADD, SEARCH, EXIT." << std::endl;
+		std::cin >> input;
 	}
 }
