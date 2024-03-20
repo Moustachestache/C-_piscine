@@ -18,12 +18,13 @@ class Contact
 	public:
 		Contact(void);
 		~Contact(void);
+		
 	private:
-		std::string	fname;
-		std::string	lname;
-		std::string	nickname;
-		std::string	phone;
-		std::string	secret;
+		std::string	_fname;
+		std::string	_lname;
+		std::string	_nickname;
+		std::string	_phone;
+		std::string	_secret;
 };
 
 #endif
