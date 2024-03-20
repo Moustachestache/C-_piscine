@@ -1,13 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Phonebook.class.hpp                                :+:      :+:    :+:   */
+/*   main.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mjochum <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: mjochum <mjochum@student.42perpignan.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/18 11:44:59 by mjochum           #+#    #+#             */
-/*   Updated: 2024/03/18 11:48:04 by mjochum          ###   ########.fr       */
+/*   Created: 2024/03/19 16:03:46 by mjochum           #+#    #+#             */
+/*   Updated: 2024/03/19 16:08:08 by mjochum          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef MAIN_HPP
+# define MAIN_HPP
 
+# include PhoneBook.class.hpp
+# include Contact.class.hpp
+
+#endif

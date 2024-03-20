@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mjochum <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 12:59:07 by mjochum           #+#    #+#             */
-/*   Updated: 2024/03/17 13:33:07 by mjochum          ###   ########.fr       */
+/*   Updated: 2024/03/19 16:01:42 by mjochum          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "main.hpp"
+
 int	main(int argc, char **argv)
 {
-	Contact	Data[8];
+	PhoneBook	phonebook;
 	std::string	input;
 
 	if (argc > 1)
@@ -21,9 +23,9 @@ int	main(int argc, char **argv)
 	{
 		std::cin >> input;
 		if (input == "ADD")
-			ft_add(&Data);
+			phonebook.add();
 		else if (input == "SEARCH")
-			ft_search(&Data);
+			phonebook.search();
 		else
 			std::cout << "Error: Invalid command \"" + input + "\"" + std::endl;
 			std::cout << "Usage: ADD, SEARCH, EXIT." + std::endl;
