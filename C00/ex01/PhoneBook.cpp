@@ -31,11 +31,21 @@ void    PhoneBook::add(void)
         this->count++;
 }
 
-
+//  Display the saved contacts as a list of 4 columns: index, first name, last name and nickname.
 void    PhoneBook::search(void)
 {
-}
+    int index = 0;
 
-void    PhoneBook::getIndex(void)
-{
+    std::cout << ".----------.----------.----------.----------." << std::endl;
+    std::cout << "|----index-|-----name-|--surname-|-nickname-|" << std::endl;
+    std::cout << "|----------|----------|----------|----------|" << std::endl;
+//  here line display per contact
+
+    std::cout << "'----------'----------'----------'----------'" << std::endl;
+    std::cout << "Input Index To Display: ";
+    std::cin >> index;
+    if (index > 8 || index < 0)
+        std::cout << "Error Fetching Index." << std::endl;
+    else
+        this->contacts[index].displayInfo();
 }

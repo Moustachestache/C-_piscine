@@ -19,9 +19,11 @@ class Contact
 	public:
 		Contact(void);
 		~Contact(void);
-		void	addContact(void);
-		
+		void		addContact(void);
+		void		displayInfo(void);
+		void		displayinfoInline(void);
 	private:
+		int			_isInit;
 		std::string	_fname;
 		std::string	_lname;
 		std::string	_nickname;

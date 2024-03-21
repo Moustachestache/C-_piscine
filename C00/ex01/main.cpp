@@ -21,7 +21,7 @@ int	main(int argc, char **argv)
 	if (argc > 1)
 		return (1);
 	std::cout << "Welcome to PhoneBook v0.0.12" << std::endl << "ADD, SEARCH, EXIT" << std::endl;
-	std::cin >> input;
+	std::getline(std::cin, input);
 	while (input != "EXIT")
 	{
 		if (input == "ADD")
@@ -30,6 +30,6 @@ int	main(int argc, char **argv)
 			phonebook.search();
 		else
 			std::cout << "Error: Invalid command \"" << input << "\"" << std::endl << "Usage: ADD, SEARCH, EXIT." << std::endl;
-		std::cin >> input;
+		std::getline(std::cin, input);
 	}
 }
