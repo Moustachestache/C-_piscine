@@ -23,24 +23,34 @@ Contact::~Contact(void)
         std::cout << "Contact \"" << this->_fname << "\" deleted." << std::endl;
 }
 
+void    Contact::addField(std::string *target, std::string message)
+{
+    std::string input;
+
+    for (input; input.empty(); getline(std::cin, input))
+        std::cout << message;
+    *target = input;
+}
+
 void    Contact::addContact(void)
 {
-    std::cout << "Creating Contact:" << std::endl << "First name: ";
-    std::getline(std::cin, this->_fname);
-    std::cout << std::endl << "Last name: ";
-    std::getline(std::cin, this->_lname);
-    std::cout << std::endl << "Nickname: ";
-    std::getline(std::cin, this->_nickname);
-    std::cout << std::endl << "Phone number: ";
-    std::getline(std::cin, this->_phone);
-    std::cout << std::endl << "Darkest Secret: ";
-    std::getline(std::cin, this->_secret);
-    std::cout << std::endl << "Contact Added." << std::endl;
+    std::cout << "Input Contact Information:" << std::endl;
+    this->addField(&this->_fname, "First Name: ");
+    this->addField(&this->_lname, "Last name: ");
+    this->addField(&this->_nickname, "Nickname: ");
+    this->addField(&this->_phone, "Phone: ");
+    this->addField(&this->_secret, "Secret: ");
     this->isInit = 1;
+    std::cout << this->_fname << " " << this->_lname << " added to contacts." << std::endl;
 }
 
 void    Contact::displayInfo(void)
 {
+    if (this->isInit == 0)
+    {
+        std::cout << "Ressource Unavailable." << std::endl;
+        return;
+    }
     std::cout << "name: " << this->_fname << std::endl;
     std::cout << "surname: " << this->_lname << std::endl;
     std::cout << "nickname: " << this->_nickname << std::endl;

@@ -23,9 +23,9 @@ PhoneBook::~PhoneBook(void)
 
 void    PhoneBook::add(void)
 {
-
+    std::cout << std::endl << "counter: " << this->count << std::endl;
     this->contacts[this->count].addContact();
-    if (this->count == 8)
+    if (this->count == 7)
         this->count = 0;
     else
         this->count++;

@@ -16,9 +16,9 @@ SRCS =		main.cpp Contact.cpp PhoneBook.cpp
 
 OBJS =		$(SRCS:.cpp=.o)
 
-CFLAGS =	-Wall -Werror -Wextra -std=c++98
+CFLAGS =	-Wall -Werror -Wextra -g -std=c++98
 
-CC =		clang++
+CC =		c++
 
 
 $(NAME) :	$(OBJS)

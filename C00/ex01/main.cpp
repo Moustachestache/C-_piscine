@@ -22,14 +22,13 @@ int	main(int argc, char **argv)
 		return (1);
 	std::cout << "Welcome to PhoneBook v0.0.12" << std::endl << "ADD, SEARCH, EXIT" << std::endl;
 	std::getline(std::cin, input);
-	while (input != "EXIT")
+	for (input; input != "EXIT"; std::getline(std::cin, input))
 	{
 		if (input == "ADD")
 			phonebook.add();
 		else if (input == "SEARCH")
 			phonebook.search();
-		else
+		else if (!input.empty() || input == "\n")
 			std::cout << "Error: Invalid command \"" << input << "\"" << std::endl << "Usage: ADD, SEARCH, EXIT." << std::endl;
-		std::getline(std::cin, input);
 	}
 }

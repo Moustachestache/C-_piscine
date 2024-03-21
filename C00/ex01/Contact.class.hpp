@@ -20,6 +20,7 @@ class Contact
 		Contact(void);
 		~Contact(void);
 		void		addContact(void);
+		void		addField(std::string *target, std::string message);
 		void		displayInfo(void);
 		void		displayinfoInline(void);
 		int			isInit;
@@ -31,5 +32,4 @@ class Contact
 		std::string	_phone;
 		std::string	_secret;
 };
-
 #endif
