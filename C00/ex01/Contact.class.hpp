@@ -22,8 +22,9 @@ class Contact
 		void		addContact(void);
 		void		displayInfo(void);
 		void		displayinfoInline(void);
+		int			isInit;
+
 	private:
-		int			_isInit;
 		std::string	_fname;
 		std::string	_lname;
 		std::string	_nickname;

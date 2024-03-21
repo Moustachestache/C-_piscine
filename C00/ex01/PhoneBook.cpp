@@ -35,15 +35,23 @@ void    PhoneBook::add(void)
 void    PhoneBook::search(void)
 {
     int index = 0;
+    std::string input;
 
     std::cout << ".----------.----------.----------.----------." << std::endl;
     std::cout << "|----index-|-----name-|--surname-|-nickname-|" << std::endl;
     std::cout << "|----------|----------|----------|----------|" << std::endl;
-//  here line display per contact
-
+    for (int i = 0; i < 8; i++)
+    {
+        if (contacts[i].isInit != 0)
+        {
+            std::cout << "|        " << i << " ";
+            contacts[i].displayinfoInline();
+        }
+    }
     std::cout << "'----------'----------'----------'----------'" << std::endl;
     std::cout << "Input Index To Display: ";
-    std::cin >> index;
+    std::getline(std::cin, input);
+    index = input[0] - 48;
     if (index > 8 || index < 0)
         std::cout << "Error Fetching Index." << std::endl;
     else
