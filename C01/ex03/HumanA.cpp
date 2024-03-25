@@ -7,8 +7,8 @@ HumanA and HumanB are almost the same except for these two tiny details:
 • HumanB may not always have a Weapon, whereas HumanA will always be armed.*/
 
 #include "main.class.hpp"
-
-HumanA::HumanA( std::string name, Weapon &weapon )
+//  HumanA::HumanA( std::string name, Weapon &weapon ) : _weapon(weapon)
+HumanA::HumanA( std::string name, Weapon &weapon ) : _weapon(weapon)
 {
     this->_name = name;
     this->_weapon = weapon;

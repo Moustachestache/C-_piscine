@@ -10,7 +10,7 @@ HumanA and HumanB are almost the same except for these two tiny details:
 
 HumanB::HumanB( std::string name )
 {
-    this->name = name;
+    this->_name = name;
 }
 
 HumanB::~HumanB( void )
@@ -20,11 +20,11 @@ HumanB::~HumanB( void )
 
 void HumanB::attack( void )
 {
-    std::cout << this->name << " attacks with " << this->weapon.getType() << std::endl;
+    std::cout << this->_name << " attacks with " << this->_weapon->getType() << std::endl;
 }
 
 
 void HumanB::setWeapon(Weapon &Weapon)
 {
-    this->weapon = Weapon;
+    this->_weapon = &Weapon;
 }
