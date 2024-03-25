@@ -6,13 +6,13 @@
 #    By: mjochum <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/17 08:10:39 by mjochum           #+#    #+#              #
-#    Updated: 2024/03/25 12:34:39 by mjochum          ###   ########.fr        #
+#    Updated: 2024/03/19 14:33:15 by mjochum          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =		Phonebook
+NAME =		brain_is_in_the_kitchen
 
-SRCS =		tests.cpp Account.cpp
+SRCS =		main.cpp
 
 OBJS =		$(SRCS:.cpp=.o)
 
@@ -25,7 +25,7 @@ $(NAME) :	$(OBJS)
 
 all :		$(NAME)
 
-clean :
+clean :		
 			rm -rf $(OBJS)
 
 fclean :	clean
