@@ -8,18 +8,17 @@ HumanA and HumanB are almost the same except for these two tiny details:
 
 #include "main.class.hpp"
 
-HumanA::HumanA( std::string name, Weapon weapon )
+HumanA::HumanA( std::string name, Weapon &weapon )
 {
-    this->name = name;
-    this->weapon = weapon;
+    this->_name = name;
+    this->_weapon = weapon;
 }
 
 HumanA::~HumanA( void )
 {
-
 }
 
 void HumanA::attack( void )
 {
-    std::cout << this->name << " attacks with " << this->weapon.getType() << std::endl;
+    std::cout << this->_name << " attacks with " << this->_weapon.getType() << std::endl;
 }
