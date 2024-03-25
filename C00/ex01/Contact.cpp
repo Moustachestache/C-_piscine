@@ -32,6 +32,12 @@ void    Contact::addField(std::string *target, std::string message)
     *target = input;
 }
 
+
+int	    Contact::getisInit(void)
+{
+    return (this->isInit);
+}
+
 void    Contact::addContact(void)
 {
     std::cout << "Input Contact Information:" << std::endl;
@@ -65,7 +71,13 @@ void    Contact::displayinfoInline(void)
     std::string info[3] = {this->_fname, this->_lname, this->_nickname};
     for (int i = 0; i < 3; i++)
     {
-        info[i].resize(10, ' ');
+        if (info[i].size() > 10)
+        {
+            info[i].resize(9, ' ');
+            info[i].append(".");
+        }
+        else
+            info[i].resize(10, ' ');
         std::cout << "|" << info[i];
     }
     std::cout << "|" << std::endl;

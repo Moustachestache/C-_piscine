@@ -42,7 +42,7 @@ void    PhoneBook::search(void)
     std::cout << "|----------|----------|----------|----------|" << std::endl;
     for (int i = 0; i < 8; i++)
     {
-        if (contacts[i].isInit != 0)
+        if (contacts[i].getisInit() != 0)
         {
             std::cout << "|        " << i << " ";
             contacts[i].displayinfoInline();

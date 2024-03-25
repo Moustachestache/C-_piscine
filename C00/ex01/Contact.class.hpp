@@ -23,9 +23,10 @@ class Contact
 		void		addField(std::string *target, std::string message);
 		void		displayInfo(void);
 		void		displayinfoInline(void);
-		int			isInit;
+		int			getisInit(void);
 
 	private:
+		int			isInit;
 		std::string	_fname;
 		std::string	_lname;
 		std::string	_nickname;
