@@ -32,13 +32,12 @@ int main(int argc, char **argv)
         return writeError("Input File Is Empty", argv[0]);
 
     //  main loopy-loop
-    std::string cleanedBuffer;
     std::string needle = argv[2];
     std::string replacement = argv[3];
     std::size_t sizeReplace = needle.length();
     while (getline(input, buffer))
     {
-        for (int i = buffer.find(argv[2]); i > 0; i = buffer.find(argv[2]))
+        for (std::size_t i = buffer.find(argv[2]); i != std::string::npos; i = buffer.find(argv[2]))
             buffer.replace(i, sizeReplace, argv[3]);
         output << buffer << std::endl;
     }
