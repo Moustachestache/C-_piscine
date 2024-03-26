@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME =		sed
+NAME =		sed_makes_me_sad
 
 SRCS =		main.cpp
 
@@ -30,5 +30,6 @@ clean :
 
 fclean :	clean
 			rm -rf $(NAME)
+			rm -rf *.replace
 
 re :		fclean $(NAME)

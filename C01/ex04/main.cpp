@@ -5,23 +5,44 @@ Of course, handle unexpected inputs and errors. You have to create and turn in y
 
 #include "main.hpp"
 
+int writeError(std::string error, char *arg)
+{
+    std::cout << "Error: " << error << std::endl << "Usage: " << arg << " [file] [string to replace] [new string]" << std::endl;
+    return (1);
+}
+
 int main(int argc, char **argv)
 {
     if (argc != 4 || argv[1] == "" || argv[2] == "") 
-    {
-        std::cout << "Invalid Arguments." << std::endl << "Usage: " << argv[0] << " [file] [string to replace] [new string]" << std::endl;
-        return (1);
-    }
+        return writeError("Invalid Arguments", argv[0]);
 
     //  variables
     std::ifstream input(argv[1]);
+    if (!input.good())
+        return writeError("Error Opening Input File", argv[0]);
     std::string ostreamName(argv[1]);
     std::ofstream output(ostreamName.append(".replace"));
+    if (!output.good())
+        return writeError("Error Creating Output File", argv[0]);
     std::string buffer;
     
-    //  input using
-    //  output using
+    //  getline
+    getline(input, buffer);
+    if (buffer.size() == 0)
+        return writeError("Input File Is Empty", argv[0]);
 
-    output << "caca";
-    //  readloop that prints
+    //  main loopy-loop
+    std::string cleanedBuffer;
+    std::string needle = argv[2];
+    std::string replacement = argv[3];
+    while (getline(input, buffer))
+    {
+        {
+            for (int i = 0; buffer[i]; i++)
+                std::cout << buffer[i];
+        }
+ //       output << cleanedBuffer << std::endl;
+    }
+    input.close();
+    output.close();
 }
