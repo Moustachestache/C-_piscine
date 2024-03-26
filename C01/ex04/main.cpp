@@ -13,27 +13,35 @@ int writeError(std::string error, char *arg)
 
 int main(int argc, char **argv)
 {
-    if (argc != 4 || argv[1] == "" || argv[2] == "") 
-        return writeError("Invalid Arguments", argv[0]);
+    if (argc != 4) 
+        return writeError("Invalid Arguments Count", argv[0]);
 
-    //  variables
+    std::string needle = argv[2];
+    std::string replacement = argv[3];
+    if (needle.length() == 0 || replacement.size() == 0) 
+        return writeError("Empty String As Argument", argv[0]);
+
+    //  input stream
     std::ifstream input(argv[1]);
     if (!input.good())
         return writeError("Error Opening Input File", argv[0]);
+    
+    //  output stream name
     std::string ostreamName(argv[1]);
-    std::ofstream output(ostreamName.append(".replace"));
+    ostreamName.append(".replace");
+    //  output stream create
+    std::ofstream output;
+    output.open(ostreamName.c_str());
     if (!output.good())
         return writeError("Error Creating Output File", argv[0]);
     std::string buffer;
-    
-    //  getline
+
+    //  getline & check
     getline(input, buffer);
     if (buffer.size() == 0)
         return writeError("Input File Is Empty", argv[0]);
 
     //  main loopy-loop
-    std::string needle = argv[2];
-    std::string replacement = argv[3];
     std::size_t sizeReplace = needle.length();
     while (getline(input, buffer))
     {
