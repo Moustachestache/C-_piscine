@@ -14,14 +14,14 @@ NAME =		very_necessary_violence
 
 SRCS =		main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 
-OBJS =		$(SRCS:.cpp=.o)
+CPPFLAGS =	-Wall -Werror -Wextra -std=c++98
 
-CFLAGS =	-Wall -Werror -Wextra -std=c++98
+OBJS =		$(SRCS:.cpp=.o)
 
 CC =		c++
 
 $(NAME) :	$(OBJS)
-			$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+			$(CC) $(CPPFLAGS) $(OBJS) -o $(NAME)
 
 all :		$(NAME)
 

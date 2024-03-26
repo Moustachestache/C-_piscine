@@ -10,9 +10,8 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME =		brain_is_in_the_kitchen
-
-SRCS =		main.cpp
+NAME =		HARL_equin
+SRCS =		main.cpp Harl.cpp
 
 OBJS =		$(SRCS:.cpp=.o)
 
