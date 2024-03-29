@@ -17,10 +17,10 @@ OBJS =		$(SRCS:.cpp=.o)
 
 CPPFLAGS =	-Wall -Werror -Wextra -std=c++98
 
-CC =		c++
+CXX =		c++
 
 $(NAME) :	$(OBJS)
-			$(CC) $(CPPFLAGS) $(OBJS) -o $(NAME)
+			$(CXX) $(CPPFLAGS) $(OBJS) -o $(NAME)
 
 all :		$(NAME)
 

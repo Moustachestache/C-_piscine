@@ -1,8 +1,16 @@
-#include "Harl.class.hpp"
+#include "main.class.hpp"
+
+    Harl::Harl( void )
+    {
+    }
+
+    Harl::~Harl( void )
+    {
+    }
 
     void    Harl::debug( void )
     {
-        std::cout << "Debuggibg: beep boop. deep doop. Gzzzzzzzzz ..." << std::endl;
+        std::cout << "Debugging: beep boop. deep doop. Gzzzzzzzzz ..." << std::endl;
     }
 
     void    Harl::info( void )
@@ -22,5 +30,11 @@
 
     void    Harl::complain( std::string level )
     {
+        void    (Harl::*ptr_f[4])() = {&Harl::debug, &Harl::info, &Harl:: warning, &Harl::error};
+        std::string HarlLevel[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+        int i = 0;
 
+        while (level.compare(HarlLevel[i]) && i <= 3)
+            i++;
+        (this->*ptr_f[i])();
     }

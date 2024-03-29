@@ -32,7 +32,7 @@ int main()
         HumanB jim("Jim");
         jim.setWeapon(club);
         jim.attack();
-        club.setType("some other type of club");
+        club.setType(NULL);
         jim.attack();
     }
     return 0;

@@ -12,9 +12,9 @@
 
 NAME =		very_necessary_violence
 
-SRCS =		main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
+SRCS =		Fixed.cpp main.cpp
 
-CPPFLAGS =	-Wall -Werror -Wextra -std=c++98
+FLAGS =		-Wall -Werror -Wextra -std=c++98
 
 OBJS =		$(SRCS:.cpp=.o)
 

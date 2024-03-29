@@ -1,14 +1,16 @@
-#ifndef HARL_CPP
-# define HARL_CPP
+#include <iostream>
+#ifndef HARL_CLASS_CPP
+# define HARL_CLASS_CPP
 
-#include "main.class.hpp"
+# include "main.class.hpp"
 
 class Harl
 {
     public:
+        Harl( void );
+        ~Harl( void );
         void    complain( std::string level );
     private:
-        typedef void(Harl::*func_array)();
         void    debug( void );
         void    info( void );
         void    warning( void );
