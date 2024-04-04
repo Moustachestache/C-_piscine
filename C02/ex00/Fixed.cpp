@@ -1,32 +1,34 @@
 #include "Fixed.class.hpp"
 
-Fixed::Fixed()
-{
+const int    Fixed::_exponentBits = 8;
 
+Fixed::Fixed() : _value(0)
+{
+    std::cout << "calling constructor." << std::endl;
 }
 
 Fixed::Fixed(const Fixed &fixed)
 {
-    if ()
+    std::cout << "calling copy constructor." << std::endl;
 }
 
-
-Fixed	&operator=(const Fixed &other)
+Fixed   &Fixed::operator=(const Fixed &other)
 {
-
+    std::cout << "calling copy assignment." << std::endl;
 }
 
 Fixed::~Fixed()
 {
-
+    std::cout  << "calling destructor." << std::endl;
 }
 
-Fixed::getRawBits( void ) const
+int     Fixed::getRawBits( void ) const
 {
-    return (raw);
+    std::cout  << "calling function getRawBits." << std::endl;
+    return (this->_value);
 }
 
-Fixed::setRawBits( int const raw )
+void    Fixed::setRawBits( int const raw ) : _value(raw)
 {
-    this->value = raw;
+    std::cout  << "calling function setRawBits." << std::endl;
 }
