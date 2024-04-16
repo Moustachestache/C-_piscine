@@ -18,6 +18,8 @@ Fixed::Fixed(const Fixed &fixed)
 Fixed   &Fixed::operator=(const Fixed &other)
 {
     std::cout << "calling copy assignment." << std::endl;
+    if (this == &other)
+        return *this;
     this->_value = other.getRawBits();
     return (*this);
 }

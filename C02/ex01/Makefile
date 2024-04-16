@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME =		canonical_evangelisation
+NAME =		ex02_killme
 
 SRCS =		Fixed.cpp main.cpp
 

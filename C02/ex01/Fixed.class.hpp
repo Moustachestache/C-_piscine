@@ -1,6 +1,7 @@
 #ifndef FIXED_CLASS_HPP
 # define FIXED_CLASS_HPP
 # include <iostream>
+# include <cmath>
 /*Private members:
 ◦ An integer to store the fixed-point number value.
 ◦ A static constant integer to store the number of fractional bits. Its value
@@ -18,15 +19,24 @@ that sets the raw value of the fixed-point number.*/
 class Fixed
 {
     public:
+    //constructors
         Fixed();
         ~Fixed();
         Fixed( const Fixed &fixed );
+        Fixed(const int value);
+        Fixed(const float fvalue);
+    //overload
 		Fixed   &operator=( const Fixed &other );
+    //https://www.youtube.com/watch?v=Zn9LHIOi7zY
+        int     toInt( void ) const;
         int     getRawBits( void ) const;
         void    setRawBits( int const raw );
+        float   toFloat(void) const;
+
     private:
         int                 _value;
         static const int    _exponentBits;
 };
 
+std::ostream    &operator<<(std::ostream &stream, const Fixed &value);
 #endif
