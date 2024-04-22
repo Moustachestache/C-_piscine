@@ -7,6 +7,7 @@
 • The 4 increment/decrement (pre-increment and post-increment, pre-decrement and
 post-decrement) operators, that will increase or decrease the fixed-point value from
 the smallest representable ϵ such as 1 + ϵ > 1.*/
+//  https://www.youtube.com/watch?v=Zn9LHIOi7zY
 class Fixed
 {
     public:
@@ -36,7 +37,12 @@ class Fixed
 		    Fixed   operator*( const Fixed &other ) const;
 		    Fixed   operator/( const Fixed &other ) const;
     //  overload: he 4 increment/decrement ++x --x, x++, x--
-    //  https://www.youtube.com/watch?v=Zn9LHIOi7zY
+    //  R& K::operator ++();    -prefix
+    //  R K::operator ++(int);  -postfix
+        Fixed   &operator++();
+        Fixed   operator++(int);
+        Fixed   &operator--();
+        Fixed   operator--(int);
 
     private:
         int                 _value;

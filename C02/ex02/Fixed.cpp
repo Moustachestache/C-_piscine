@@ -145,3 +145,30 @@ std::ostream &operator<<( std::ostream &stream, const Fixed &value)
     {
         return Fixed(this->toFloat() / other.toFloat());
     }
+
+    //  increment decrement
+    Fixed   &Fixed::operator++()
+    {
+        this->_value + 1;
+        return *this;
+    }
+
+    Fixed   Fixed::operator++(int)
+    {
+        Fixed old = *this;  // copy old value
+        old++;              // prefix increment
+        return old;         // return old value
+    }
+
+    Fixed   &Fixed::operator--()
+    {
+        this->_value - 1;
+        return *this;
+    }
+
+    Fixed   Fixed::operator--(int)
+    {
+        Fixed old = *this;  // copy old value
+        old--;              // prefix increment
+        return old;         // return old value
+    }
