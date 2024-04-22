@@ -21,7 +21,7 @@ OBJS =		$(SRCS:.cpp=.o)
 CXX =		c++
 
 $(NAME) :	$(OBJS)
-			$(CXX) $(CPPFLAGS) $(OBJS) -o $(NAME)
+			$(CXX) $(FLAGS) $(OBJS) -o $(NAME)
 
 all :		$(NAME)
 
