@@ -172,3 +172,33 @@ std::ostream &operator<<( std::ostream &stream, const Fixed &value)
         old--;              // prefix increment
         return old;         // return old value
     }
+
+    //  overloaded function
+    const Fixed     &Fixed::min(const Fixed &a, const Fixed &b)
+    {
+        if (a > b)
+            return b;
+        return a;
+    }
+
+    Fixed   &Fixed::min(Fixed &a, Fixed &b)
+    {
+        if (a > b)
+            return b;
+        return a;
+    }
+    
+    const Fixed     &Fixed::max(const Fixed &a, const Fixed &b)
+    {
+        if (a < b)
+            return b;
+        return a;
+    }
+    
+    Fixed   &Fixed::max(Fixed &a, Fixed &b)
+    {
+        if (a < b)
+            return b;
+        return a;
+    }
+    

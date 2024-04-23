@@ -6,7 +6,16 @@
 • The 4 arithmetic operators: +, -, *, and /.
 • The 4 increment/decrement (pre-increment and post-increment, pre-decrement and
 post-decrement) operators, that will increase or decrease the fixed-point value from
-the smallest representable ϵ such as 1 + ϵ > 1.*/
+the smallest representable ϵ such as 1 + ϵ > 1.
+
+A static member function min that takes as parameters two references on fixed-point
+numbers, and returns a reference to the smallest one.
+• A static member function min that takes as parameters two references to constant
+fixed-point numbers, and returns a reference to the smallest one.
+• A static member function max that takes as parameters two references on fixed-point
+numbers, and returns a reference to the greatest one.
+• A static member function max that takes as parameters two references to constant
+fixed-point numbers, and returns a reference to the greatest one.*/
 //  https://www.youtube.com/watch?v=Zn9LHIOi7zY
 class Fixed
 {
@@ -23,7 +32,7 @@ class Fixed
         void    setRawBits( int const raw );
         float   toFloat( void ) const;
     //canonical assignment overload
-		    Fixed   &operator=( const Fixed &other );
+		Fixed   &operator=( const Fixed &other );
     //  overload: The 6 comparison operators: >, <, >=, <=, == and !=
         bool operator>( const Fixed &other ) const;
         bool operator<( const Fixed &other ) const;
@@ -32,10 +41,10 @@ class Fixed
         bool operator==( const Fixed &other ) const;
         bool operator!=( const Fixed &other ) const;
     //  overload: The 4 arithmetic operators: +, -, *, and /
-		    Fixed   operator+( const Fixed &other ) const;
-		    Fixed   operator-( const Fixed &other ) const;
-		    Fixed   operator*( const Fixed &other ) const;
-		    Fixed   operator/( const Fixed &other ) const;
+		Fixed   operator+( const Fixed &other ) const;
+		Fixed   operator-( const Fixed &other ) const;
+		Fixed   operator*( const Fixed &other ) const;
+		Fixed   operator/( const Fixed &other ) const;
     //  overload: he 4 increment/decrement ++x --x, x++, x--
     //  R& K::operator ++();    -prefix
     //  R K::operator ++(int);  -postfix
@@ -43,7 +52,11 @@ class Fixed
         Fixed   operator++(int);
         Fixed   &operator--();
         Fixed   operator--(int);
-
+    //  public overloaded member
+        const Fixed   &min(const Fixed &a, const Fixed &b);
+        Fixed   &min(Fixed &a, Fixed &b);
+        const Fixed   &max(const Fixed &a, const Fixed &b);
+        Fixed   &max(Fixed &a, Fixed &b);
     private:
         int                 _value;
         static const int    _exponentBits;
