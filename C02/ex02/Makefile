@@ -14,14 +14,14 @@ NAME =		ex03_kill_me_more
 
 SRCS =		Fixed.cpp main.cpp
 
-FLAGS =		-Wall -Werror -Wextra -std=c++98
+CPPFLAGS =		-Wall -Werror -Wextra -std=c++98
 
 OBJS =		$(SRCS:.cpp=.o)
 
 CXX =		c++
 
 $(NAME) :	$(OBJS)
-			$(CXX) $(FLAGS) $(OBJS) -o $(NAME)
+			$(CXX) $(CPPFLAGS) $(OBJS) -o $(NAME)
 
 all :		$(NAME)
 

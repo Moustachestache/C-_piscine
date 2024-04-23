@@ -4,12 +4,10 @@ const int    Fixed::_exponentBits = 8;
 
 Fixed::Fixed() : _value(0)
 {
-    std::cout << "calling constructor." << std::endl;
 }
 
 Fixed::Fixed(const Fixed &fixed)
 {
-    std::cout << "calling copy constructor." << std::endl;
     this->_value = fixed.getRawBits();
 }
 
@@ -18,7 +16,6 @@ Fixed::Fixed(const int value)
 {
     int temp;
 
-    std::cout << "calling const int constructor." << std::endl;
     temp = (value << this->_exponentBits);
     this->setRawBits(temp);
 }
@@ -26,9 +23,6 @@ Fixed::Fixed(const int value)
 //  const float constructor
 Fixed::Fixed(const float fvalue)
 {
-    int temp;
-
-    std::cout << "calling const int constructor." << std::endl;
     this->_value = roundf(fvalue * (1 << _exponentBits));
 }
 
@@ -49,7 +43,6 @@ int     Fixed::toInt( void ) const
 //  Fixed   &operator=(const Fixed &other)
 Fixed   &Fixed::operator=(const Fixed &other)
 {
-    std::cout << "calling copy assignment." << std::endl;
     if (this == &other)
         return *this;
     this->_value = other.getRawBits();
@@ -59,18 +52,15 @@ Fixed   &Fixed::operator=(const Fixed &other)
 
 Fixed::~Fixed()
 {
-    std::cout  << "calling destructor." << std::endl;
 }
 
 int     Fixed::getRawBits( void ) const
 {
-    std::cout  << "calling function getRawBits." << std::endl;
     return (this->_value);
 }
 
 void    Fixed::setRawBits( int const raw )
 {
-    std::cout  << "calling function setRawBits." << std::endl;
     this->_value = raw;
 }
 
@@ -149,28 +139,28 @@ std::ostream &operator<<( std::ostream &stream, const Fixed &value)
     //  increment decrement
     Fixed   &Fixed::operator++()
     {
-        this->_value + 1;
+        this->setRawBits(this->getRawBits() + 1);
         return *this;
     }
 
     Fixed   Fixed::operator++(int)
     {
-        Fixed old = *this;  // copy old value
-        old++;              // prefix increment
-        return old;         // return old value
+        Fixed old(*this);                       // copy old value
+        old.setRawBits(old.getRawBits() + 1);   // prefix increment
+        return old;                             // return old value
     }
 
     Fixed   &Fixed::operator--()
     {
-        this->_value - 1;
+        this->setRawBits(this->getRawBits() - 1);
         return *this;
     }
 
     Fixed   Fixed::operator--(int)
     {
-        Fixed old = *this;  // copy old value
-        old--;              // prefix increment
-        return old;         // return old value
+        Fixed old(*this);                       // copy old value
+        old.setRawBits(old.getRawBits() - 1);   // prefix increment
+        return old;                             // return old value
     }
 
     //  overloaded function
