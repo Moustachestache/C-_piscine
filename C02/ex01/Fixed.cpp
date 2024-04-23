@@ -26,8 +26,6 @@ Fixed::Fixed(const int value)
 //  const float constructor
 Fixed::Fixed(const float fvalue)
 {
-    int temp;
-
     std::cout << "calling const int constructor." << std::endl;
     this->_value = roundf(fvalue * (1 << _exponentBits));
 }
