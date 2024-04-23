@@ -137,30 +137,34 @@ std::ostream &operator<<( std::ostream &stream, const Fixed &value)
     }
 
     //  increment decrement
+    //  prefix
     Fixed   &Fixed::operator++()
     {
-        this->setRawBits(this->getRawBits() + 1);
+        ++_value;
         return *this;
     }
 
+    //  postfix
     Fixed   Fixed::operator++(int)
     {
-        Fixed old(*this);                       // copy old value
-        old.setRawBits(old.getRawBits() + 1);   // prefix increment
-        return old;                             // return old value
+        Fixed   old(*this);
+
+        _value++;
+        return old;
     }
 
     Fixed   &Fixed::operator--()
     {
-        this->setRawBits(this->getRawBits() - 1);
+        --_value;
         return *this;
     }
 
     Fixed   Fixed::operator--(int)
     {
-        Fixed old(*this);                       // copy old value
-        old.setRawBits(old.getRawBits() - 1);   // prefix increment
-        return old;                             // return old value
+        Fixed   old(*this);
+
+        _value--;
+        return old;
     }
 
     //  overloaded function

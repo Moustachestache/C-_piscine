@@ -48,15 +48,15 @@ class Fixed
     //  overload: he 4 increment/decrement ++x --x, x++, x--
     //  R& K::operator ++();    -prefix
     //  R K::operator ++(int);  -postfix
-        Fixed   &operator++();
+        Fixed&  operator++();
         Fixed   operator++(int);
-        Fixed   &operator--();
+        Fixed&  operator--();
         Fixed   operator--(int);
     //  public overloaded member
         static const Fixed   &min(const Fixed &a, const Fixed &b);
-        Fixed   &min(Fixed &a, Fixed &b);
+        static Fixed   &min(Fixed &a, Fixed &b);
         static const Fixed   &max(const Fixed &a, const Fixed &b);
-        Fixed   &max(Fixed &a, Fixed &b);
+        static Fixed   &max(Fixed &a, Fixed &b);
     private:
         int                 _value;
         static const int    _exponentBits;
