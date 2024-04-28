@@ -8,12 +8,12 @@ int main(void)
     for (int round = 0; a.getHp() > 0 || b.getHp() > 0; round++)
     {
         std::cout << "//    ROUND " << round << "   //" << std::endl;
-        a.attack(b.getName);
-        b.takeDamage(a.getAd())
+        a.attack(b.getName());
+        b.takeDamage(a.getAd());
         a.beRepaired(2);
 
-        b.attack(a.getName);
-        a.takeDamage(b.getAd())
+        b.attack(a.getName());
+        a.takeDamage(b.getAd());
         b.beRepaired(2);
     }
 }

@@ -1,12 +1,12 @@
 #include "ClapTrap.hpp"
 
 //  constructors & copy constructors
-ClapTrap::ClapTrap () : _hp(10), _ap(10), _ad(0), _name("default ClapTrap")
+ClapTrap::ClapTrap () : _hp(10), _ap(10), _ad(3), _name("default ClapTrap")
 {
     std::cout << "default constructor called." << std::endl;
 }
 
-ClapTrap::ClapTrap ( std::string name ) : _hp(10), _ap(10), _ad(0), _name(name)
+ClapTrap::ClapTrap ( std::string name ) : _hp(10), _ap(10), _ad(3), _name(name)
 {
     std::cout << "string constructor called." << std::endl;
 }
@@ -39,22 +39,22 @@ ClapTrap::~ClapTrap ()
 }
 
 //  getters
-int ClapTrap::getAp( void )
+int ClapTrap::getAp( void ) const
 {
     return this->_ap;
 }
 
-int ClapTrap::getHp( void )
+int ClapTrap::getHp( void ) const
 {
     return this->_hp;
 }
 
-int ClapTrap::getAd( void )
+int ClapTrap::getAd( void ) const
 {
     return this->_ad;
 }
 
-std::string ClapTrap::getName( void )
+std::string ClapTrap::getName( void ) const
 {
     return this->_name;
 }
@@ -89,12 +89,14 @@ Implement and turn in your own tests to ensure your code works as expected.*/
 
 void    ClapTrap::attack( const std::string& target )
 {
-    std::cout << this->_name << " attacks " << target;
+    if (this->getHp() <= 0 || this->getAp() <= 0)
+        return;
+    std::cout << this->_name << " attacks " << target << std::endl;
 }
 
 void    ClapTrap::takeDamage( unsigned int amount )
 {
-    std::cout << this->getName() << " took " << amount << " damage" << std::endl;
+    std::cout << this->getName() << " takes " << amount << " damage" << std::endl;
     this->_hp -= amount;
 }
 
@@ -109,5 +111,4 @@ void    ClapTrap::beRepaired( unsigned int amount )
         std::cout << " for " << amount << " hp";
     }
     std::cout << std::endl;
-
 }

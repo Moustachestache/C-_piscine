@@ -12,10 +12,10 @@ class ClapTrap  {
         void            attack( const std::string& target );
         void            takeDamage( unsigned int amount );
         void            beRepaired( unsigned int amount );
-        int             getAp( void );
-        int             getHp( void );
-        int             getAd( void );
-        std::string     getName( void );
+        int             getAp( void ) const;
+        int             getHp( void ) const;
+        int             getAd( void ) const;
+        std::string     getName( void ) const;
     private:
         int         _hp;
         int         _ap;
