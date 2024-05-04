@@ -7,7 +7,6 @@ FragTrap::FragTrap()    : ClapTrap("default FragTrap")
     _hp = 100;
     _ap = 100;
     _ad = 30;
-    _name = "Default FragTrap";
 }
 
 FragTrap::FragTrap( std::string name )  : ClapTrap(name)
@@ -16,7 +15,6 @@ FragTrap::FragTrap( std::string name )  : ClapTrap(name)
     _hp = 100;
     _ap = 50;
     _ad = 20;
-    _name = name;
 }
 
 FragTrap::~FragTrap()
@@ -25,7 +23,7 @@ FragTrap::~FragTrap()
 }
 
 void FragTrap::highFivesGuy( void )
-{{
+{
     std::cout << this->getName() << " requests a high five";
     if (this->getAp() <= 0)
         std::cout << " but is left hanging :(";
@@ -34,5 +32,4 @@ void FragTrap::highFivesGuy( void )
         std::cout << "✋" << std::endl;
     }
     std::cout << std::endl;
-}
 }
