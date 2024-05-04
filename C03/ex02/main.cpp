@@ -4,9 +4,9 @@
 
 int main(void)
 {
-//    ScavTrap    a("Skav Trap but with a name");
-    FragTrap    b("Jean Valjean");
-/*
+    ScavTrap    a("ScavTrapN");
+    FragTrap    b("FragTrapN");
+
     for (int round = 0; a.getHp() > 0 && b.getHp() > 0; round++)
     {
         std::cout << "//    ROUND " << round << "   //" << std::endl;
@@ -20,5 +20,5 @@ int main(void)
     }
     std::cout << "End of match. Results:" << std::endl;
     std::cout << a << std::endl;
-    std::cout << b << std::endl;*/
+    std::cout << b << std::endl;
 }

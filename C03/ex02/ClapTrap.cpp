@@ -3,17 +3,17 @@
 //  constructors & copy constructors
 ClapTrap::ClapTrap () : _hp(10), _ap(10), _ad(3), _name("default ClapTrap")
 {
-    std::cout << "default constructor called." << std::endl;
+    std::cout << "default ClapTrap constructor called." << std::endl;
 }
 
 ClapTrap::ClapTrap ( std::string name ) : _hp(10), _ap(10), _ad(3), _name(name)
 {
-    std::cout << "string constructor called." << std::endl;
+    std::cout << "ClapTrap string constructor called." << std::endl;
 }
 
 ClapTrap::ClapTrap (const ClapTrap &src)
 {
-    std::cout << "copy constructor called." << std::endl;
+    std::cout << "ClapTrap copy constructor called." << std::endl;
     this->_hp = src.getHp();
     this->_ap = src.getAp();
     this->_ad = src.getAd();
@@ -22,7 +22,7 @@ ClapTrap::ClapTrap (const ClapTrap &src)
 
 ClapTrap  &ClapTrap::operator=(const ClapTrap &src)
 {
-    std::cout << "copy assignment constructor called." << std::endl;
+    std::cout << "ClapTrap copy assignment constructor called." << std::endl;
     if (this != &src)
     {
         this->_hp = src.getHp();
@@ -35,7 +35,7 @@ ClapTrap  &ClapTrap::operator=(const ClapTrap &src)
 
 ClapTrap::~ClapTrap ()
 {
-    std::cout << "destructor called for " << this->getName() << std::endl;
+    std::cout << "ClapTrap destructor called for " << this->getName() << std::endl;
 }
 
 //  getters
