@@ -21,6 +21,7 @@ class ClapTrap  {
         int         _ap;
         int         _ad;
         std::string _name;
+    private:
 };
 std::ostream    &operator<<(std::ostream &stream, const ClapTrap &obj);
 #endif

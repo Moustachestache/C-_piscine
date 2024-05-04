@@ -33,7 +33,7 @@ class ScavTrap : public ClapTrap {
         ScavTrap( const ScavTrap &src );
         ~ScavTrap();
         ScavTrap &operator= ( const ScavTrap &src );
+        void attack( const std::string& target );
         void guardGate();
 };
-std::ostream    &operator<<(std::ostream &stream, const ClapTrap &obj);
 #endif

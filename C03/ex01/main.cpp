@@ -3,7 +3,7 @@
 
 int main(void)
 {
-    ClapTrap    a("ClapTrap lvl 3");
+    /*ClapTrap    a("ClapTrap lvl 3");
     ScavTrap    b("Skav Trap but with a name");
 
     for (int round = 0; a.getHp() > 0 && b.getHp() > 0; round++)
@@ -21,4 +21,8 @@ int main(void)
     std::cout << "End of match. Results:" << std::endl;
     std::cout << a << std::endl;
     std::cout << b << std::endl;
+    std::cout << "line line line line line" << std::endl;
+    */
+    ScavTrap    z("Skav");
+    z.attack("rien");
 }

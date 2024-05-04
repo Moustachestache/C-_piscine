@@ -7,7 +7,7 @@
 • Attack damage (20)*/
 
 // pas bien: ScavTrap::ScavTrap () : _hp(100), _ap(50), _ad(20), _name("default ScavTrap")
-ScavTrap::ScavTrap ()
+ScavTrap::ScavTrap () : ClapTrap()
 {
     std::cout << "ScavTrap default constructor called." << std::endl;
     _hp = 100;
@@ -16,7 +16,7 @@ ScavTrap::ScavTrap ()
     _name = "Default ScavTrap";
 }
 
-ScavTrap::ScavTrap ( std::string name )
+ScavTrap::ScavTrap ( std::string name ) : ClapTrap(name)
 {
     std::cout << "ScavTrap string constructor called." << std::endl;
     _hp = 100;
@@ -25,14 +25,14 @@ ScavTrap::ScavTrap ( std::string name )
     _name = name;
 }
 
-/*ScavTrap::ScavTrap (const ScavTrap &src)
+ScavTrap::ScavTrap (const ScavTrap &src) : ClapTrap(src)
 {
     std::cout << "ScavTrap copy constructor called." << std::endl;
     this->_hp = src.getHp();
     this->_ap = src.getAp();
     this->_ad = src.getAd();
     this->_name = src.getName();
-}*/
+}
 
 ScavTrap  &ScavTrap::operator=(const ScavTrap &src)
 {
@@ -50,10 +50,15 @@ ScavTrap  &ScavTrap::operator=(const ScavTrap &src)
 ScavTrap::~ScavTrap ()
 {
     std::cout << "ScavTrap destructor called." << std::endl;
-    //this->ClapTrap::~ClapTrap();
 }
 
-void ScavTrap::guardGate()
+void    ScavTrap::attack( const std::string& target )
+{
+    ClapTrap::attack(target);
+    std::cout << "Scav attacks on " << target << std::endl;
+}
+
+void    ScavTrap::guardGate()
 {
     std::cout << "ScavTrap Uses Guard Gate. ";
     if (this->getAp() <= 0)
@@ -64,11 +69,4 @@ void ScavTrap::guardGate()
         this->_ap--;
     }
     std::cout << std::endl;
-}
-
-//  hehe
-std::ostream &operator<<( std::ostream &stream, const ScavTrap &obj)
-{
-    stream << obj.getName() << " - hp="<< obj.getHp() << " ad=" << obj.getAd() << " ap=" << obj.getAp();
-    return (stream);
 }

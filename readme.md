@@ -20,3 +20,5 @@
 
 ### C03 is allegedly about things being used into other things when they are turned into things
 ![Aaaaaaaaaaaaaaaaaaaaaaaand opennnnn !!!](https://i.imgur.com/Da2gsCR.png)
+- [the intra video has summed it up nicely](https://elearning.intra.42.fr/notions/piscine-c-d03-inheritance/subnotions/inheritance-c/videos/inheritance-c-dd50c36f-f2fd-473d-b071-75850ef7651a)
+- [geeks for geeks](https://www.geeksforgeeks.org/inheritance-in-c/)
