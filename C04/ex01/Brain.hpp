@@ -8,7 +8,8 @@ class Brain
         ~Brain();
         Brain( const Brain &obj );
         Brain   &operator=( const Brain &obj );
-        std::string getIdea( int i ) const;
+        const std::string getIdea( int i ) const;
+        void changeIdea( int i, std::string str);
     protected:
         std::string ideas[100];
 };

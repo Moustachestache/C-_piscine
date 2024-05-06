@@ -9,7 +9,8 @@ class Dog : public Animal
         Dog  &operator=( const Dog &obj );
         ~Dog();
         void    makeSound( void ) const;
-        void    printIdeas( void );
+        void    writeIdeas( void ) const;
+        void    rethinkIdeas( int i, std::string str );
     private:
         Brain *brain;
 };

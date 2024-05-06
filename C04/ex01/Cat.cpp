@@ -33,3 +33,13 @@ void    Cat::makeSound( void ) const
 {
     std::cout << "meow meow meow" << std::endl;
 }
+
+void    Cat::writeIdeas( void ) const
+{
+    std::cout << "| ";
+    for (int i = 0; i < 100; i++)
+    {
+        std::cout << this->brain->getIdea(i) << " | ";
+    }
+    std::cout << std::endl;
+}

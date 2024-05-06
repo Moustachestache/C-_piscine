@@ -36,3 +36,13 @@ void    Animal::makeSound( void ) const
 {
     std::cout << "noise noise noise" << std::endl;
 }
+
+void    Animal::writeIdeas( void ) const
+{
+    std::cout << "this beast aint got no thoughts" << std::endl;
+}
+
+void    Animal::rethinkIdeas( void )
+{
+    std::cout << "alas this animal doesnt think" << std::endl;
+}

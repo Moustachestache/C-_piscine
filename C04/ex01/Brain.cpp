@@ -33,7 +33,12 @@ Brain   &Brain::operator=(const Brain &obj)
     return *this;
 }
 
-std::string Brain::getIdea( int i ) const
+const std::string Brain::getIdea( int i ) const
 {
     return this->ideas[i];
+}
+
+void Brain::changeIdea( int i, std::string str)
+{
+    this->ideas[i] = str;
 }

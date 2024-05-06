@@ -34,7 +34,7 @@ void    Dog::makeSound( void ) const
     std::cout << "woof woof woof" << std::endl;
 }
 
-void    Dog::printIdeas( void )
+void    Dog::writeIdeas( void ) const
 {
     std::cout << "| ";
     for (int i = 0; i < 100; i++)
@@ -42,4 +42,9 @@ void    Dog::printIdeas( void )
         std::cout << this->brain->getIdea(i) << " | ";
     }
     std::cout << std::endl;
+}
+
+void    Dog::rethinkIdeas( int i, std::string str )
+{
+    this->brain->changeIdea(i, str);
 }
