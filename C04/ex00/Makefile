@@ -12,7 +12,7 @@
 
 NAME =		The_Animal_Kingdom_Is_Wide_And_Beautiful
 
-SRCS =		main.cpp Animal.cpp Dog.cpp Cat.cpp
+SRCS =		main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
 
 CPPFLAGS =		-Wall -Werror -Wextra -std=c++98
 

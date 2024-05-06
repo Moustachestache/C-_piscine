@@ -7,6 +7,6 @@ class Cat : public Animal
         Cat();
         Cat( const Cat &obj );
         Cat  &operator=( const Cat &obj );
-        virtual ~Cat();
-        virtual void    makeSound( void ) const;
+        ~Cat();
+        void    makeSound( void ) const;
 };
