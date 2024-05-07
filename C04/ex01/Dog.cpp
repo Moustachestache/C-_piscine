@@ -11,6 +11,7 @@ Dog::Dog( const Dog &obj ) : Animal()
 {
     std::cout << "Dog Copy Constructor Called" << std::endl;
     this->type = obj.type;
+    this->brain = new Brain(obj.getBrain());
 }
 
 Dog  &Dog::operator=( const Dog &obj )
@@ -47,4 +48,9 @@ void    Dog::writeIdeas( void ) const
 void    Dog::rethinkIdeas( int i, std::string str )
 {
     this->brain->changeIdea(i, str);
+}
+
+const Brain&  Dog::getBrain( void ) const
+{
+    return (*this->brain);
 }

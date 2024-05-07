@@ -14,7 +14,7 @@ Brain::Brain( const Brain &obj)
     std::cout << "Brain Copy Constructor Called" << std::endl;
     for (int i = 0; i < 100; i++)
     {
-        this->ideas[i] = obj.getIdea(i);
+        this->ideas[i] = obj.getIdea(i) + "copied";
     }
 }
 
