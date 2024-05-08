@@ -14,7 +14,7 @@ Brain::Brain( const Brain &obj)
     std::cout << "Brain Copy Constructor Called" << std::endl;
     for (int i = 0; i < 100; i++)
     {
-        this->ideas[i] = obj.getIdea(i) + "copied";
+        this->ideas[i] = obj.getIdea(i) + " *copied*";
     }
 }
 
@@ -26,9 +26,13 @@ Brain::~Brain()
 Brain   &Brain::operator=(const Brain &obj)
 {
     std::cout << "Brain Copy Operator Constructor Called" << std::endl;
-    for (int i = 0; i < 100; i++)
+    if (this != &obj)
     {
-        this->ideas[i] = obj.getIdea(i);
+        Brain* newBrain = new Brain();
+        for (int i = 0; i < 100; i++)
+            {
+                newBrain->ideas[i] = obj.getIdea(i) + " *= stolen*";
+            }
     }
     return *this;
 }

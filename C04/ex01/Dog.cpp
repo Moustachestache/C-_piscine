@@ -19,7 +19,13 @@ Dog  &Dog::operator=( const Dog &obj )
     std::cout << "Dog Copy Assignment Constructor Called" << std::endl;
     if (this != &obj)
     {
-        this->type = obj.type;
+        Dog *newDog = new Dog();
+        newDog->type = obj.type;
+        newDog->brain = new Brain(obj.getBrain());
+        //  assignment to 'this' (anachronism)
+        //  merci vscode
+        //  cpp98 *shrug*
+        *this = *newDog;
     }
     return *this;
 }

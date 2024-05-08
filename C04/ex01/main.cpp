@@ -25,6 +25,7 @@ int main()
     {
         delete AnimalArray[i];
     }
+
     std::cout << "test 2:" << std::endl;
     std::cout << "---- creating dog" << std::endl;
     Dog *dog = new Dog();
@@ -43,4 +44,19 @@ int main()
     dog2->writeIdeas();
     delete dog;
     delete dog2;
+
+
+    std::cout << "test 3:" << std::endl;
+    std::cout << "[cat = cat] calls constructor [brain = brain]" << std::endl;
+    Cat *cat = new Cat();
+    cat->rethinkIdeas(1, "i hate you");
+    cat->rethinkIdeas(0, "give warmth now");
+    //  Cat *cat2 = new Cat(*cat);
+    Cat cat2 = *cat;
+    cat2.rethinkIdeas(2, "poop");
+    cat->writeIdeas();
+    cat2.writeIdeas();
+    delete cat;
+    
+    return 0;
 }
