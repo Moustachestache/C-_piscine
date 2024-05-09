@@ -16,9 +16,7 @@ Animal  &Animal::operator=( const Animal &obj )
     std::cout << "Animal Overload Assignment Constructor called" << std::endl;
     if (this != &obj)
     {
-        Animal* newAnimal = new Animal();
-        newAnimal->type = obj.type;
-        *this = *newAnimal;
+        this->type = obj.type;
     }
     return *this;
 }

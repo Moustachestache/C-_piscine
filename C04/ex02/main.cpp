@@ -6,12 +6,13 @@
 #include <iostream>
 
 int main()
-{  
+{/*
     //  ADDED:
     //  test 0, shows the exercise works because you cant instantiate Animal.
     //  no works means is good
-    //  Animal test;
-    //  Animal test2(test);
+    Animal test;
+    Animal test2(test);
+    Animal test3 = test;*/
 
     //  everything else works as before.
     std::cout << "test 1:" << std::endl;

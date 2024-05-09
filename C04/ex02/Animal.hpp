@@ -5,9 +5,9 @@ class Animal
 {
     public:
         Animal();
+        virtual ~Animal();
         Animal( const Animal &obj );
         Animal          &operator=( const Animal &obj );
-        virtual ~Animal();
         std::string     getType( void ) const;
         virtual void    makeSound( void ) const = 0;
         virtual void    writeIdeas( void ) const;

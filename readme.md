@@ -7,7 +7,8 @@
 
 
 ### C01 on memory and how we don't use malloc. Also references.
-- (I'm sure links exists but i aint got them in my notes.)
+- [a good write up on static, heap and stack memory (stackoverflow)](https://stackoverflow.com/questions/408670/stack-static-and-heap-in-c)
+- (I'm sure more links exists but i aint got them in my notes.)
 - (the intra has good videos. even better in french.)
 
 ### C02 on operator overload. Disregard the math unless you're a nerd.
@@ -22,3 +23,8 @@
 ![Aaaaaaaaaaaaaaaaaaaaaaaand opennnnn !!!](https://i.imgur.com/Da2gsCR.png)
 - [the intra video has summed it up nicely](https://elearning.intra.42.fr/notions/piscine-c-d03-inheritance/subnotions/inheritance-c/videos/inheritance-c-dd50c36f-f2fd-473d-b071-75850ef7651a)
 - [geeks for geeks](https://www.geeksforgeeks.org/inheritance-in-c/)
+
+### C04 more of C03 but with purpose?
+- [I have been doing Assignment operator wrong the whole time (wikipedia)](https://en.wikipedia.org/wiki/Assignment_operator_(C%2B%2B))
+- [Abstract classes (cpp reference)](https://en.cppreference.com/w/cpp/language/abstract_class)
+- [Virtual vs pure virtual (stackoverflow)](https://stackoverflow.com/questions/1306778/virtual-pure-virtual-explained#:~:text=%22Virtual%22%20means%20that%20the%20method,with%20no%20directly%2Dcallable%20implementation.)
