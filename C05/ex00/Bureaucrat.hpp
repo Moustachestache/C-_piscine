@@ -17,7 +17,7 @@ class Bureaucrat {
         Bureaucrat &operator<<(Bureaucrat &src);
 
         //  getters
-        std::string getName( void );
+        std::string getName( void ) const;
         int getGrade( void );
 
         //  functions
@@ -34,7 +34,6 @@ class Bureaucrat {
         class   GradeTooHighException : public std::exception
         {
             public:
-
                 virtual const char* what( void ) const throw();
         };
 

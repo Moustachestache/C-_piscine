@@ -27,8 +27,8 @@ Bureaucrat &Bureaucrat::operator=(Bureaucrat &src)
 {
     if (&src != this)
     {
-        this->_grade = src.getGrade();
-        this->_name = src.getName();
+        _grade = src.getGrade();
+        _name = src.getName();
     }
     return *this;
 }
@@ -43,7 +43,7 @@ Bureaucrat &Bureaucrat::operator<<(Bureaucrat &src)
 
 }
 
-std::string     Bureaucrat::getName( void )
+std::string     Bureaucrat::getName( void ) const
 {
     return _name;
 }
