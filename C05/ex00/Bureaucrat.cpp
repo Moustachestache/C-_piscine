@@ -1,4 +1,4 @@
-#include "Bureaucrat.hpp"
+# include "Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat() : _name("Jean Default"), _grade(150)
 {
@@ -40,10 +40,10 @@ Bureaucrat::~Bureaucrat()
 
 Bureaucrat &Bureaucrat::operator<<(Bureaucrat &src)
 {
-
+    (void) src;
 }
 
-std::string     Bureaucrat::getName( void ) const
+const std::string     Bureaucrat::getName( void )
 {
     return _name;
 }

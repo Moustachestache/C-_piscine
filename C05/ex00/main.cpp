@@ -1,5 +1,4 @@
 #include "Bureaucrat.hpp"
-#include "Exceptions.hpp"
 
 //  re: stolen from webserv
 
