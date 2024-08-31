@@ -19,12 +19,13 @@ int main(void)
     try
         {
             Bureaucrat  jebediah;
-			std::cout << jedediah;
-            Bureaucrat  oops(0);
-			std::cout << oops;
+            Bureaucrat  oops(1);
         }
     catch (std::exception & e)
         {
 		    std::cerr << e.what() << std::endl;
         }
+
+	std::cout << jedediah;
+	std::cout << oops;
 }

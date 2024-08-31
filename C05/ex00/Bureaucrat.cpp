@@ -33,7 +33,7 @@ Bureaucrat &Bureaucrat::operator=(Bureaucrat &src)
 
 Bureaucrat::~Bureaucrat()
 {
-
+    std::cout << "recycling bureaucrat " + getName();
 }
 
 Bureaucrat &Bureaucrat::operator<<(Bureaucrat &src)
