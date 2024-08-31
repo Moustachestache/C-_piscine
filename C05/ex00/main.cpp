@@ -19,7 +19,9 @@ int main(void)
     try
         {
             Bureaucrat  jebediah;
+			std::cout << jedediah;
             Bureaucrat  oops(0);
+			std::cout << oops;
         }
     catch (std::exception & e)
         {

@@ -17,9 +17,8 @@ Bureaucrat::Bureaucrat(int level) : _name("Jean Nivault")
     _grade = level;
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat &src)
+Bureaucrat::Bureaucrat(Bureaucrat &src) : _name(src.getName())
 {
-    _name = src.getName();
     _grade = src.getGrade();
 }
 
@@ -28,7 +27,6 @@ Bureaucrat &Bureaucrat::operator=(Bureaucrat &src)
     if (&src != this)
     {
         _grade = src.getGrade();
-        _name = src.getName();
     }
     return *this;
 }
@@ -41,9 +39,10 @@ Bureaucrat::~Bureaucrat()
 Bureaucrat &Bureaucrat::operator<<(Bureaucrat &src)
 {
     (void) src;
+    return *this;
 }
 
-const std::string     Bureaucrat::getName( void )
+const std::string     Bureaucrat::getName( void ) const
 {
     return _name;
 }

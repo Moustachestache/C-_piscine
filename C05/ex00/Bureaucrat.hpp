@@ -17,7 +17,7 @@ class Bureaucrat {
         Bureaucrat &operator<<(Bureaucrat &src);
 
         //  getters
-        const std::string getName( void );
+        const std::string getName( void ) const;
         int getGrade( void );
 
         //  functions
