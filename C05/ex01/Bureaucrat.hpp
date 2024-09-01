@@ -37,8 +37,6 @@ class Bureaucrat {
             public:
                 virtual const char* what( void ) const throw();
         };
-        //  ex01 addendum
-        void signForm( void );
 
     protected:
         const std::string   _name;
