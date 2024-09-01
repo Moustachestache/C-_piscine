@@ -23,6 +23,7 @@ class Bureaucrat {
         //  functions
         void    promote(unsigned char val);
         void    demote(unsigned char val);
+        void    signForm( void );
 
         //  exceptions
         class   GradeTooLowException : public std::exception

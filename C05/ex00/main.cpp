@@ -36,7 +36,10 @@ int main(void)
 			//	1.	level too high
 			//	oops.promote(1);
 			//	2.	level too low
-				george2.demote(1);
+			//	george2.demote(1);
+			//	3.	init level too high or too low
+			//	Bureaucrat	naze(151);
+			//	Bureaucrat	jopa(0);
         }
     catch (std::exception & e)
         {
