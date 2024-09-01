@@ -18,14 +18,28 @@ int main(void)
 {
     try
         {
+			//	create
             Bureaucrat  jebediah;
             Bureaucrat  oops(1);
+            Bureaucrat  george("Giorgyi Bureaucratenko");
+            Bureaucrat  george2(jebediah);
+
+			george2 = george;
+
+			//	output
+			std::cout << jebediah << std::endl;
+			std::cout << oops << std::endl;
+			std::cout << george << std::endl;
+			std::cout << george2 << std::endl;
+
+			//	catch errors
+			//	1.	level too high
+			//	oops.promote(1);
+			//	2.	level too low
+				george2.demote(1);
         }
     catch (std::exception & e)
         {
 		    std::cerr << e.what() << std::endl;
         }
-
-	std::cout << jedediah;
-	std::cout << oops;
 }

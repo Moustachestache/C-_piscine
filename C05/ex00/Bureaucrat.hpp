@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream> 
+#include <ostream>
 #include <string>
 #include <exception>
 
@@ -14,11 +15,10 @@ class Bureaucrat {
         ~Bureaucrat();
 
         //  overload
-        Bureaucrat &operator<<(Bureaucrat &src);
 
         //  getters
         const std::string getName( void ) const;
-        int getGrade( void );
+        int getGrade( void ) const;
 
         //  functions
         void    promote(unsigned char val);
@@ -41,3 +41,4 @@ class Bureaucrat {
         const std::string   _name;
         int                 _grade;
 };
+std::ostream &operator<<(std::ostream &stream, const Bureaucrat &obj);
