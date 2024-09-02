@@ -13,9 +13,9 @@ Bureaucrat::Bureaucrat(std::string name) : _name(name), _grade(150)
 Bureaucrat::Bureaucrat(int level) : _name("Jean Nivault")
 {
     if (level > 150)
-        throw GradeTooLowException();
+        GradeTooLowException();
     if (level < 1)
-        throw GradeTooHighException();
+        GradeTooHighException();
     _grade = level;
     std::cout << "Birthing [level] Bureaucrat: " << _name << " grade " << _grade << std::endl;
 }
@@ -75,10 +75,16 @@ void    Bureaucrat::demote(unsigned char val)
 
 const char *Bureaucrat::GradeTooHighException::what( void ) const throw()
 {
-    return ("Error: Grade too high");
+    return ("Error: Bureaucrat: Grade too high\r\n");
 }
 
 const char *Bureaucrat::GradeTooLowException::what( void ) const throw()
 {
-    return ("Error: Grade too low");
+    return ("Error: Bureaucrat: Grade too low\r\n");
+}
+
+//  ex01 addendum
+void    Bureaucrat::signForm( void )
+{
+    std::cout << getName() << " is signing a form ..." << std::endl;
 }

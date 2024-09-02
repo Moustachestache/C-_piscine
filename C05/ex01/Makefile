@@ -1,5 +1,5 @@
-NAME =		Bureaucrat
-SRCS =		main.cpp Bureaucrat.cpp
+NAME =		BureaucratWithFormFactor
+SRCS =		main.cpp Bureaucrat.cpp Form.cpp
 
 CPPFLAGS =	-Wall -Werror -Wextra -std=c++98
 

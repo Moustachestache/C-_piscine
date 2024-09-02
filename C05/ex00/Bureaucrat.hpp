@@ -1,8 +1,8 @@
-#pragma once
-#include <iostream> 
-#include <ostream>
-#include <string>
-#include <exception>
+# pragma once
+# include <iostream> 
+# include <ostream>
+# include <string>
+# include <exception>
 
 class Bureaucrat {
     public:
@@ -23,7 +23,6 @@ class Bureaucrat {
         //  functions
         void    promote(unsigned char val);
         void    demote(unsigned char val);
-        void    signForm( void );
 
         //  exceptions
         class   GradeTooLowException : public std::exception
@@ -37,8 +36,6 @@ class Bureaucrat {
             public:
                 virtual const char* what( void ) const throw();
         };
-        //  ex01 addendum
-        void signForm( void );
 
     protected:
         const std::string   _name;

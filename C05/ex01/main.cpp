@@ -1,45 +1,48 @@
-#include "Bureaucrat.hpp"
-
-//  re: stolen from webserv
-
-/* 	try
-	{
-		data.parseFile( av[1] );
-		//std::cout << data.getServerStrDebug() << std::flush; // debug: print the parsed values
-		data.startAllServers();
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-		return (1);
-	} */
+# include "Bureaucrat.hpp"
+# include "Form.hpp"
 
 int main(void)
 {
     try
         {
 			//	create
-            Bureaucrat  jebediah;
-            Bureaucrat  oops(1);
+			std::cout << ">>> Bureaucrats : " << std::endl;
+            Bureaucrat  jebediah(5);
             Bureaucrat  george("Giorgyi Bureaucratenko");
-            Bureaucrat  george2(jebediah);
 
-			george2 = george;
+			std::cout << ">>> Forms : " << std::endl;
+            Form  *test;
+			Form	form;
+			Form	form1(1, 1);
+			Form	form2(150, 150);
+			test = new Form();
+			delete test;
 
 			//	output
+			std::cout << ">>> information : " << std::endl;
 			std::cout << jebediah << std::endl;
-			std::cout << oops << std::endl;
 			std::cout << george << std::endl;
-			std::cout << george2 << std::endl;
 
-			//	catch errors
-			//	1.	level too high
-			//	oops.promote(1);
-			//	2.	level too low
-			//	george2.demote(1);
-			//	3.	init level too high or too low
-			//	Bureaucrat	naze(151);
-			//	Bureaucrat	jopa(0);
+			std::cout << form1 << std::endl;
+			std::cout << form2 << std::endl;
+
+			//	sign
+			std::cout << ">>> Signing : " << std::endl;
+			form1.beSigned(george);
+			form2.beSigned(george);
+
+			//	output, this time signed
+			std::cout << ">>> information (this time, signed) : " << std::endl;
+			std::cout << form1 << std::endl;
+			std::cout << form2 << std::endl;
+
+			//	errors
+			std::cout << ">>> errors : " << std::endl;
+			//	sign with insufficient level (jebediah is lv 5, the form needs lv 1)
+			form1.beSigned(jebediah);
+
+			//	no more
+			std::cout << ">>> fin : " << std::endl;
         }
     catch (std::exception & e)
         {

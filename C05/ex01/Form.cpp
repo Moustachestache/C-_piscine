@@ -1,4 +1,4 @@
-# include "Form.hpp"
+# include "main.hpp"
 
 Form::Form() : 
     _name("default form"), 
@@ -6,7 +6,7 @@ Form::Form() :
     _signGrade(150),
     _execGrade(150)
 {
-    std::cout << "Creating [default] form." << std::endl;
+    std::cout << "Creating [default] form (0x" << this << ")" << std::endl;
 }
 
 Form::Form(int signGrade, int execGrade) : 
@@ -16,11 +16,14 @@ Form::Form(int signGrade, int execGrade) :
     _execGrade(execGrade)
 {
     if (signGrade > 150 || execGrade > 150)
-        GradeTooLowException();
-
+    {
+        throw Form::GradeTooLowException();
+    }
     if (signGrade < 1 || execGrade < 1)
-        GradeTooHighException();
-    std::cout << "Creating [custom] form." << std::endl;
+    {
+        throw Form::GradeTooHighException();
+    }
+    std::cout << "Creating [custom] form (0x" << this << ")" << std::endl;
 }
 
 Form::Form(const Form &obj) : 
@@ -29,43 +32,72 @@ Form::Form(const Form &obj) :
     _signGrade(obj.getSignGrade()), 
     _execGrade(obj.getExecGrade())
 {
-    std::cout << "Creating [copy] form." << std::endl;
+    std::cout << "Creating [copy] form (0x" << &obj << ")" << std::endl;
 }
 
 Form    &Form::operator=(const Form &src)
 {
-    std::cout << "Creating [copy assignment] form." << std::endl;
+    if (&src != this)
+    {
+        _isSigned = 0;
+    }
+    std::cout << "Creating [copy assignment] form (0x" << &src << ")" << std::endl;
+    return *this;
 }
+
 Form::~Form()
 {
-
+    std::cout << "Shredding documents ... Goodbye form \"" << this->getName() << "\""<< std::endl;
 }
 
 //  getters
-const std::string   Form::getName( void ) const
+std::string   Form::getName( void ) const
 {
-
+    return _name;
 }
-const int   Form::getSignGrade( void ) const
+int   Form::getSignGrade( void ) const
 {
-
+    return _signGrade;
 }
-const int   Form::getExecGrade( void ) const
+int   Form::getExecGrade( void ) const
 {
-
+    return _execGrade;
 }
 bool    Form::getIsSigned( void )
 {
-
+    return _isSigned;
 }
 
 //  members
-void    Form::beSigned( const Bureaucrat &signatory)
+void    Form::beSigned(Bureaucrat &signatory)
 {
-
+    if (signatory.getGrade() <= this->getSignGrade())
+    {
+        signatory.signForm();
+        _isSigned = 1;
+    }
+    else
+    {
+        throw Form::GradeTooHighException();
+    }
 }
 
-std::ostream &operator<<(std::ostream &stream, const Form &obj)
+std::ostream &operator<<(std::ostream &stream, Form &obj)
 {
+    stream << "[info] Form: " << obj.getName() << " sign lvl: " << obj.getSignGrade() << " exec lvl: " << obj.getExecGrade() << "." << std::endl;
+    if (obj.getIsSigned() == true)
+        stream << "[status] signed.";
+    else
+        stream << "[status] unsigned.";
+    return stream;
+}
 
+const char *Form::GradeTooHighException::what( void ) const throw()
+{
+    return ("Error: Form: Grade too high\r\n");
+}
+
+const char *Form::GradeTooLowException::what( void ) const throw()
+{
+    return ("Error: Form: Grade too low\r\n");
 }
