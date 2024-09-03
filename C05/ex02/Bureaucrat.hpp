@@ -10,11 +10,10 @@ class Bureaucrat {
         Bureaucrat();
         Bureaucrat(int level);
         Bureaucrat(std::string name);
+        Bureaucrat(std::string name, int level);
         Bureaucrat(Bureaucrat &src);
         Bureaucrat &operator=(Bureaucrat &src);
         ~Bureaucrat();
-
-        //  overload
 
         //  getters
         const std::string getName( void ) const;

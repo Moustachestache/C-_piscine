@@ -7,10 +7,11 @@ class AForm {
         AForm();
         AForm(const AForm &obj);
         AForm &operator=(const AForm &src);
-        ~AForm();
+        virtual ~AForm() = 0;
 
         //  extra constructors
         AForm(int signGrade, int execGrade);
+        AForm(std::string name, int signGrade, int execGrade);
 
         //  getters
         std::string     getName( void ) const;
@@ -33,6 +34,16 @@ class AForm {
             public:
                 virtual const char* what( void ) const throw();
         };
+
+        class   ExecPermissionTooLowException : public std::exception
+        {
+            public:
+                virtual const char* what( void ) const throw();
+        };
+        
+        //  ex 02
+        void            execute(const Bureaucrat &executor);
+        virtual void    formExecution() = 0;
 
     private:
         const std::string   _name;

@@ -26,6 +26,23 @@ AForm::AForm(int signGrade, int execGrade) :
     std::cout << "Creating [custom] AForm (0x" << this << ")" << std::endl;
 }
 
+AForm::AForm(std::string name, int signGrade, int execGrade) :
+    _name(name), 
+    _isSigned(0),
+    _signGrade(signGrade), 
+    _execGrade(execGrade)
+{
+    if (signGrade > 150 || execGrade > 150)
+    {
+        throw AForm::GradeTooLowException();
+    }
+    if (signGrade < 1 || execGrade < 1)
+    {
+        throw AForm::GradeTooHighException();
+    }
+    std::cout << "Creating [custom \"" << getName() << "\"] AForm (0x" << this << ")" << std::endl;
+}
+
 AForm::AForm(const AForm &obj) : 
     _name(obj.getName() + "copy AForm"), 
     _isSigned(0),
@@ -100,4 +117,24 @@ const char *AForm::GradeTooHighException::what( void ) const throw()
 const char *AForm::GradeTooLowException::what( void ) const throw()
 {
     return ("Error: AForm: Grade too low\r\n");
+}
+
+const char *AForm::ExecPermissionTooLowException::what( void ) const throw()
+{
+    return ("Error: Bureaucrat Executive level Too Low\r\n");
+}
+
+
+void    AForm::execute(const Bureaucrat &executor)
+{
+    if (getIsSigned() == 0 || 
+        executor.getGrade() > getSignGrade() ||
+        executor.getGrade() > getExecGrade())
+            throw ExecPermissionTooLowException();
+    formExecution();
+}
+
+void    AForm::formExecution()
+{
+    std::cout << "hmm, this is awkward ..." << std::endl;
 }

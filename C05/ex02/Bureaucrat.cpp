@@ -20,6 +20,17 @@ Bureaucrat::Bureaucrat(int level) : _name("Jean Nivault")
     std::cout << "Birthing [level] Bureaucrat: " << _name << " grade " << _grade << std::endl;
 }
 
+Bureaucrat::Bureaucrat(std::string name, int level) : _name(name)
+{
+    if (level > 150)
+        throw GradeTooLowException();
+    if (level < 1)
+        throw GradeTooHighException();
+    _grade = level;
+    std::cout << "Birthing [string + level] Bureaucrat: " << _name << " grade " << _grade << std::endl;
+
+}
+
 Bureaucrat::Bureaucrat(Bureaucrat &src) : _name(src.getName())
 {
     _grade = src.getGrade();

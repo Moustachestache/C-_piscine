@@ -1,5 +1,8 @@
-NAME =		FormsFromTheDeep
-SRCS =		main.cpp Bureaucrat.cpp AForm.cpp
+NAME =		MoreFormsThanYouCanCount
+SRCS =		main.cpp Bureaucrat.cpp AForm.cpp \
+			ShrubberyCreationForm.cpp \
+			RobotomyRequestForm.cpp \
+			PresidentialPardonForm.cpp
 
 CPPFLAGS =	-Wall -Werror -Wextra -std=c++98
 
