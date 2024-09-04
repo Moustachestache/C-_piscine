@@ -11,24 +11,9 @@ int main(void)
             RobotomyRequestForm         drill("brain");
             PresidentialPardonForm      criminal("jean");
 
-			shrub.beSigned(georgiy);
-			shrub.execute(georgiy);
+			georgiy.executeForm(shrub);
 
-			drill.beSigned(georgiy);
-			drill.execute(georgiy);
-
-			criminal.beSigned(georgiy);
-			criminal.execute(georgiy);
-
-            //  errors
-            shrub.beSigned(herbert);
-			shrub.execute(herbert);
-
-			drill.beSigned(herbert);
-			drill.execute(herbert);
-
-			criminal.beSigned(herbert);
-			criminal.execute(herbert);
+			herbert.executeForm(shrub);
 
         }
     catch (std::exception & e)

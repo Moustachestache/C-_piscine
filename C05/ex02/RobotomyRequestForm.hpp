@@ -13,7 +13,7 @@ class RobotomyRequestForm : public AForm
         ~RobotomyRequestForm();
         
         //  etc
-        void    formExecution();
+        void    execute(const Bureaucrat &executor) const;
 
     private:
         const std::string   _target;

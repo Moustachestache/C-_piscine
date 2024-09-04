@@ -42,8 +42,7 @@ class AForm {
         };
         
         //  ex 02
-        void            execute(const Bureaucrat &executor);
-        virtual void    formExecution() = 0;
+        virtual void    execute(const Bureaucrat &executor) const = 0;
 
     private:
         const std::string   _name;

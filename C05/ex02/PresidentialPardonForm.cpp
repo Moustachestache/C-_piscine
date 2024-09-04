@@ -20,7 +20,9 @@ PresidentialPardonForm::~PresidentialPardonForm()
     std::cout << "Pulverizing Presidential Pardon " << this << std::endl;
 }
 
-void    PresidentialPardonForm::formExecution()
+void    PresidentialPardonForm::execute(const Bureaucrat &executor) const
 {
+    if (executor.getGrade() > getExecGrade())
+        throw ExecPermissionTooLowException();
     std::cout << _target << " was pardonned by Zaphod Beeblebrox" << std::endl;
 }

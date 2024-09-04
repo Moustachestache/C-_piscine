@@ -1,8 +1,5 @@
-#pragma once
-#include <iostream> 
-#include <ostream>
-#include <string>
-#include <exception>
+# pragma once
+# include "main.hpp"
 
 class Bureaucrat {
     public:
@@ -36,6 +33,9 @@ class Bureaucrat {
             public:
                 virtual const char* what( void ) const throw();
         };
+
+        //  ex02
+        void    executeForm(AForm const & form) const;
 
     protected:
         const std::string   _name;

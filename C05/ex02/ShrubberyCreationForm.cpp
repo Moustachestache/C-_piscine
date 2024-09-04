@@ -17,8 +17,10 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
     std::cout << "Shredding Shrubs " << this << std::endl;
 }
 
-void    ShrubberyCreationForm::formExecution()
+void    ShrubberyCreationForm::execute(const Bureaucrat &executor) const
 {
+    if (executor.getGrade() > getExecGrade())
+        throw ExecPermissionTooLowException();
     std::ofstream	file;
 
 	file.open(_target.c_str(), std::ofstream::trunc);

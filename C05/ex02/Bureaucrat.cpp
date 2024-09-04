@@ -99,3 +99,17 @@ void    Bureaucrat::signForm( void )
 {
     std::cout << getName() << " is signing a form ..." << std::endl;
 }
+
+//  ex02
+void    Bureaucrat::executeForm(const AForm &form) const
+{
+	try
+	{
+        form.execute(*this);
+		std::cout << this->_name << " executed " << form.getName() << std::endl;
+	}
+	catch (std::exception & e)
+	{
+		std::cout << "FormExecutionError: " << e.what() << std::endl;
+	}
+}

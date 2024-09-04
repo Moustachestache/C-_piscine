@@ -121,20 +121,5 @@ const char *AForm::GradeTooLowException::what( void ) const throw()
 
 const char *AForm::ExecPermissionTooLowException::what( void ) const throw()
 {
-    return ("Error: Bureaucrat Executive level Too Low\r\n");
-}
-
-
-void    AForm::execute(const Bureaucrat &executor)
-{
-    if (getIsSigned() == 0 || 
-        executor.getGrade() > getSignGrade() ||
-        executor.getGrade() > getExecGrade())
-            throw ExecPermissionTooLowException();
-    formExecution();
-}
-
-void    AForm::formExecution()
-{
-    std::cout << "hmm, this is awkward ..." << std::endl;
+    return ("Bureaucrat Executive level Too Low\r\n");
 }

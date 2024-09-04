@@ -21,8 +21,10 @@ RobotomyRequestForm::~RobotomyRequestForm()
     std::cout << "Removing Robotomy Request " << this << std::endl;
 }
 
-void    RobotomyRequestForm::formExecution()
+void    RobotomyRequestForm::execute(const Bureaucrat &executor) const
 {
+    if (executor.getGrade() > getExecGrade())
+        throw ExecPermissionTooLowException();
     std::cout << "Bzzt Brrt ";
     if (std::rand() % 2 == 1)
         std::cout << _target << " has been successfully robotomized" << std::endl;
