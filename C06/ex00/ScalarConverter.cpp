@@ -43,7 +43,7 @@ static void     toInt(const std::string &thing)
         std::cout << "int: wow there cowboy thats a big number" << std::endl;
         return ;
     }
-    else if (thing.c_str()[0] != '0' && retVal == 0)
+    else if (thing.c_str()[0] != '0' && retVal == 0 && thing.size() == 1)
     {
         std::cout << "int: invalid value" << std::endl;
         return ;
