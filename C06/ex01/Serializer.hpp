@@ -11,6 +11,7 @@ deserialize(). Then, ensure the return value of deserialize() compares equal to 
 original pointer.
 Do not forget to turn in the files of your Data structure. */
 
+# pragma once 
 # include <iostream>
 # include <stdint.h>
 
