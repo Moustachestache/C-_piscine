@@ -30,3 +30,4 @@ class Array
         T       *_array;
         int     _size;
 };
+# include "Array.tpp"

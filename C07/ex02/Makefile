@@ -1,5 +1,5 @@
 NAME =		template
-SRCS =		main.cpp Array.cpp
+SRCS =		main.cpp
 
 CPPFLAGS =	-Wall -Werror -Wextra -std=c++98
 
