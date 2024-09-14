@@ -41,21 +41,21 @@ void    identify(Base *p)
 {
     try
     {
-        dynamic_cast<A&>(*p);
+        A magouille = dynamic_cast<A&>(*p);
 		std::cout << "Type is : A" << std::endl;
         return ;
     }
     catch( ... ){}
     try
     {
-        dynamic_cast<B&>(*p);
+        B magouille = dynamic_cast<B&>(*p);
 		std::cout << "Type is : B" << std::endl;
         return ;
     }
     catch( ... ){}
     try
     {
-        dynamic_cast<C&>(*p);
+        C magouille = dynamic_cast<C&>(*p);
 		std::cout << "Type is : C" << std::endl;
         return ;
     }
@@ -65,6 +65,7 @@ void    identify(Base *p)
 
 void    identify(Base &p)
 {
+    //  parceque voila
     identify(&p);
 }
 
