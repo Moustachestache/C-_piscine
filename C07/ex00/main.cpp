@@ -11,6 +11,9 @@ int main(void)
     double c = (rand() / a);
     double d = (rand() / b);
 
+    // float g = (rand() / 3) % 1000;
+    // float h = (rand() / 3) % 1000;
+
     std::string e = "hehe hihi hoho";
     std::string f = "ca me chatouille la bidouille";
 
@@ -20,8 +23,15 @@ int main(void)
     //  int
     std::cout << "int:   a = " << a << ", b = " << b << " [max: " << ::max(a, b) << "] [min: " << ::min(a, b) << "]" << std::endl;
     std::cout << "swap:  [pre:  " << a << "(" << &a << ") " << b << " (" << &b << ")" << "]\n";
-    ::swap(a, b);
+    ::swap(a, b);std::cout << "       [post: " << a << "(" << &a << ") " << b << " (" << &b << ")" << "]\n" << std::endl;
+    std::cout << "XORswp:[pre:  " << a << "(" << &a << ") " << b << " (" << &b << ")" << "]\n";
+    ::XORswap(a, b);
     std::cout << "       [post: " << a << "(" << &a << ") " << b << " (" << &b << ")" << "]\n" << std::endl;
+
+    //  float only swap XOR
+/*     std::cout << "XORswp:[pre:  " << g << "(" << &g << ") " << h << " (" << &h << ")" << "]\n";
+    ::XORswap(g, h);
+    std::cout << "       [post: " << g << "(" << &g << ") " << h << " (" << &h << ")" << "]\n" << std::endl; */
 
     // double
     std::cout << "double: c = " << c << ", d = " << d << " [max: " << ::max(c, d) << "] [min: " << ::min(c, d) << "]" << std::endl;
