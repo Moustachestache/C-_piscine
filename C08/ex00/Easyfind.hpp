@@ -16,7 +16,7 @@ Of course, implement and turn in your own tests to ensure everything works as ex
 # include <algorithm>
 # include <stdlib.h>
 # include <vector>
-# include <map>
+# include <deque>
 # include <list>
 
 class	ValueNonExistantE : public std::exception
@@ -31,17 +31,32 @@ int   &easyfind(T &haystack, int needle)
     typename T::iterator iterator = find(haystack.begin(), haystack.end(), needle);
 
     if (iterator == haystack.end())
-        throw ValueNonExistantE;
-    
-    return  *iterator;
+        throw   ValueNonExistantE();
+    else
+        return  *iterator;
+}
+
+template <typename T, typename NUM>
+void    populateRand(T &haystack, NUM val)
+{
+    if (val <= 0)
+        return ;
+    srand(rand());
+    std::cout << "populating container ..." << std::endl;
+    for (int i = 0; i < val; i++)
+        haystack.push_back(rand() % 1000);
 }
 
 template <typename T>
-void    populateRand(T &haystack)
+void    catchWrapper(T &haystack, int needle)
 {
-    srand(time());
-    for (long unsigned int i = 0; i < haystack.size(); i++)
+    try
     {
-        haystack.insert(rand() % 1000);
+        int *val = &easyfind(haystack, needle);
+        std::cout << "found occurence of " << needle << " at " << val << " (val: " << *val << ")" << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
     }
 }
