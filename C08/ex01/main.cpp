@@ -11,9 +11,9 @@ int     main(void)
     {
         test.addNumber(420);
     }
-    catch ( ... )
+    catch ( std::exception &e)
     {
-        std::cout << "woops" << std::endl;
+        std::cout << "woops: " << e.what() << std::endl;
     }
 
     test.shortestSpan();
