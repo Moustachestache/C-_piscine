@@ -26,7 +26,7 @@ class Span
         void    display( void );
 
         //  an exception.
-        class   SpanSizeOverloadException : std::exception
+        class   SpanSizeOverloadException : public std::exception
         {
             public:
                 virtual const char* what( void ) const throw();

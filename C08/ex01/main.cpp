@@ -2,7 +2,7 @@
 
 int     main(void)
 {
-    Span    test(50000);
+    Span    test(10);
     test.fill();
     test.display();
 
@@ -11,9 +11,9 @@ int     main(void)
     {
         test.addNumber(420);
     }
-    catch ( std::exception &e)
+    catch ( std::exception &e )
     {
-        std::cout << "woops: " << e.what() << std::endl;
+        std::cout << "woops:" << e.what() << std::endl;
     }
 
     test.shortestSpan();
