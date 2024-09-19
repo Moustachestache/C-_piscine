@@ -34,7 +34,7 @@ int main(void)
 
 			//	catch errors
 			//	1.	level too high
-			//	oops.promote(1);
+			oops.promote(1);
 			//	2.	level too low
 			//	george2.demote(1);
 			//	3.	init level too high or too low
@@ -45,4 +45,6 @@ int main(void)
         {
 		    std::cerr << e.what() << std::endl;
         }
+
+		std::cout << "test" << std::endl;
 }
