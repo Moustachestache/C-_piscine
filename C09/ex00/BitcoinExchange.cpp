@@ -89,15 +89,18 @@ BitcoinExchange::BitcoinExchange(const std::string &filename) : _filename(filena
     std::cout << "databases initialised ..." << std::endl;
 }
 
-BitcoinExchange::BitcoinExchange(const BitcoinExchange &obj)
+BitcoinExchange::BitcoinExchange(const BitcoinExchange &obj) : _filename(obj._filename), dataBase(obj.dataBase), inputData(obj.inputData)
 {
-    (void) obj;
 }
 
 BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &src)
 {
-
-    (void) src;
+    if (&src != this)
+    {
+        _filename = src._filename;
+        dataBase = src.dataBase;
+        inputData = src.inputData;
+    }
     return *this;
 }
 

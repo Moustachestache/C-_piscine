@@ -33,7 +33,6 @@ class BitcoinExchange
         void    validateInput(void);
         void    listValues(void);
 
-
     //  errors
     class InputErrorException : public std::exception
     {

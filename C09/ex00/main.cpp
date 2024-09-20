@@ -10,7 +10,6 @@ int main(int ac, char *av[])
     }
     else
         input = av[1];
-
     try
     {
         BitcoinExchange     btc(input);
@@ -21,5 +20,4 @@ int main(int ac, char *av[])
     {
         std::cerr << "error: " << e.what() << '\n';
     }
-    
 }
