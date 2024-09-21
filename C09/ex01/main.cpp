@@ -31,13 +31,20 @@ int main(int ac, char *argv[])
     std::string     thingToMath;
     if (ac != 2)
     {
-        std::cout << "warning: not enough arguments\nuse " << argv[0] << " [reverse polish notation]\nproceeding with default \"13+4*5\\6-\" ..." << std::endl;
-        thingToMath = "13+4*5/6-";
+        std::cout << "warning: not enough arguments\nuse " << argv[0] << " [reverse polish notation]\nproceeding with default ..." << std::endl;
+        thingToMath = "13+4*51*/6-9+";
     }
     else
         thingToMath = argv[1];
 
-    RPN     operation(thingToMath);
+    try
+    {
+        RPN     operation(thingToMath);
 
-    operation.operate();
+        operation.operate();
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
 }

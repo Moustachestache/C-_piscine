@@ -2,6 +2,8 @@
 
 # include <iostream>
 # include <queue>
+# include <limits>
+# include <unistd.h>
 
 /* You must create a program with these constraints:
 • The program name is RPN.
@@ -31,7 +33,6 @@ class RPN
         RPN &operator=(const RPN &src);
         ~RPN();
 
-        //  https://genius.com/Eminem-my-name-is-original-version-lyrics#:~:text=Dr.%20Dre%2C%20don%27t%20just%20stand%20there%2C%20operate!
         void    operate(void);
         int     validate(std::string &input);
 
@@ -41,7 +42,22 @@ class RPN
             virtual const char* what() const throw();
     };
 
+    class DivideByZeroException : public std::exception
+    {
+        public:
+            virtual const char* what() const throw();
+    };
+
+    class ExpectedOperandError : public std::exception
+    {
+        public:
+            virtual const char* what() const throw();
+    };
+
     private:
-        std::queue<char>    _container;
+        //  runs operation on all numbers in temp queue.
+        //  returns double;
+        double  _operateCurrent(double n1, double n2, char operand);
+        std::queue <double>  _container;
         std::string         _input;
 };
