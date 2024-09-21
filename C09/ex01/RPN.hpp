@@ -58,6 +58,6 @@ class RPN
         //  runs operation on all numbers in temp queue.
         //  returns double;
         double  _operateCurrent(double n1, double n2, char operand);
-        std::queue <double>  _container;
+        std::queue <double> _container;
         std::string         _input;
 };
