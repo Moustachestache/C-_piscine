@@ -3,7 +3,6 @@
 RPN::RPN(std::string &operation) : _input(operation)
 {
     char    buffer = 0;
-    std::cout << "solving: " << _input << std::endl;
     while (operation.length() > 0)
     {
         buffer = operation.at(0);
@@ -15,16 +14,17 @@ RPN::RPN(std::string &operation) : _input(operation)
             throw UnexpectedInputException();
         operation.erase(0, 1);
     }
+    std::cout << "solving: " << _input << std::endl;
 }
 
-RPN::RPN(const RPN &obj)
+RPN::RPN(const RPN &obj) : _container(obj._container), _input(obj._input)
 {
-    (void) obj;
 }
 
 RPN &RPN::operator=(const RPN &src)
 {
-    (void) src;
+    _container = src._container;
+    _input = src._input;
     return *this;
 }
 
@@ -35,7 +35,7 @@ RPN::~RPN()
 
 void    RPN::operate(void)
 {
-    char                operand = 0;
+    char    operand = 0;
     double  n1 = 0;
     double  n2 = 0;
     std::queue<double>  temp;
@@ -46,17 +46,16 @@ void    RPN::operate(void)
         _container.pop();
         n2 = _container.front();
         _container.pop();
-        while (!isOperand(_container.front()))
+        while (!isOperand(_container.front()) && _container.size())
         {
             temp.push(n1);
             n1 = n2;
             n2 = _container.front();
             _container.pop();
         }
+        if (!isOperand(_container.front()))
         operand = _container.front();
         _container.pop();
-        if (!isOperand(operand))
-            throw ExpectedOperandError();
         temp.push(_operateCurrent(n1, n2, operand));
         while (_container.size())
         {
@@ -68,7 +67,7 @@ void    RPN::operate(void)
             temp.pop();
     }
     if (_container.size() > 1)
-        std::cout << "error: n operand doesnt match n values" << std::endl;
+        throw ExpectedOperandError();
     else
         std::cout << "result is : " << _container.front() << std::endl;
 }

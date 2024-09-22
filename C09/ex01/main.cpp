@@ -28,15 +28,17 @@ int     isOperand(char c)
 
 int main(int ac, char *argv[])
 {
-    std::string     thingToMath;
     if (ac != 2)
     {
-        std::cout << "warning: not enough arguments\nuse " << argv[0] << " [reverse polish notation]\nproceeding with default ..." << std::endl;
-        thingToMath = "13+4*51*/6-9+";
+        std::cout << "fatal: not enough arguments\nuse " << argv[0] << " [reverse polish notation]" << std::endl;
+        return 1;
     }
-    else
-        thingToMath = argv[1];
-
+    std::string     thingToMath(argv[1]);
+    if (thingToMath.length() == 0)
+    {
+        std::cout << "fatal: empty string\nuse " << argv[0] << " [reverse polish notation]" << std::endl;
+        return 1;
+    }
     try
     {
         RPN     operation(thingToMath);
