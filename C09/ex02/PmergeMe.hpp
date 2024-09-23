@@ -15,6 +15,7 @@ class listSort
         void    merge(std::list<int> &toSort);
         //  debug
         void    displayList(std::list<int> list);
+
     private:
         bool    _hasDuplicates(std::list<int>, int j);
         std::list<int>   _list;

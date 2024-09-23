@@ -18,8 +18,11 @@ listSort::listSort(char **argv) : _list()
         else
             _list.push_front(std::atoi(argv[i]));
     }
-    //  self call
+    //  let the (let the (let the (let the recusvity start) recusvity start) recusvity start) recusvity start
     sort(_list);
+    clock_t time = clock();
+    displayList(_list);
+    std::cout << "execution time with std::list is " << (1000.0 * (clock() - time) / CLOCKS_PER_SEC) << std::endl;
 }
 
 bool    listSort::_hasDuplicates(std::list<int> list, int j)
@@ -64,32 +67,28 @@ void    listSort::sort(std::list<int> &toSort)
     //  1   divide whats left in two back into this function
     if (toSort.size() > 1)
     {
-        toSort.splice(left.begin(), toSort, toSort.begin(), middle);
-        toSort.splice(right.begin(), toSort, middle, toSort.end());
+        left.insert(left.begin(), toSort.begin(), middle);
+        right.insert(right.begin(), middle, toSort.end());
     }
-    //  debug
-    displayList(left);
-    displayList(right);
-    std::cout << left.size() << " : " << right.size() << " : " << toSort.size() << std::endl;
     //  2   recursively keep dividing until we have only two nb left
     if (left.size() > 1)
-    {
         sort(left);
-        
-    }
     if (right.size() > 1)
         sort(right);
-
     //  3   swap values if need to be swapped
-    //  4   merge back and insert where it should be in CURRENT list
+    if (left.front() > right.front())
+        std::swap(left, right);
+    //  4   insert back into x
+    left.merge(right);
+    toSort = left;
 }
 
 //  debug
 void    listSort::displayList(std::list<int> list)
 {
-    std::cout << "displaying list at: " << &list << " size: " << list.size() << std::endl;
     for (std::list<int>::iterator it = list.begin(); it != list.end(); it++)
     {
-        std::cout << *it << " " << std::endl;
+        std::cout << *it << " ";
     }
+    std::cout << std::endl;
 }
