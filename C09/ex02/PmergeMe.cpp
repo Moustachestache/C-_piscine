@@ -21,23 +21,23 @@ listSort::listSort(char **argv) : _list(), _list2()
             _list2.insert(nBuffer);
         }
     }
+    //  init time
+    clock_t time = clock();
     //  let the (let the (let the (let the recusvity start) recusvity start) recusvity start) recusvity start
     std::cout << "before: ";
     displayList(_list);
-    clock_t time = clock();
     sortList(_list);
     std::cout << "after: ";
     displayList(_list);
-    std::cout << "execution time with std::list " << (100.0 * (clock() - time) / CLOCKS_PER_SEC) << " seconds" << std::endl;
+    std::cout << "execution time with std::list " << (1000.0 * (clock() - time) / CLOCKS_PER_SEC) << " seconds" << std::endl;
 
     //  lets sort through a set
-    time = clock();
     std::cout << "before: ";
     displaySet(_list2);
     sortSet(_list2);
     std::cout << "after: ";
     displaySet(_list2);
-    std::cout << "execution time with std::set  " << (100.0 * (clock() - time) / CLOCKS_PER_SEC) << " seconds" << std::endl;
+    std::cout << "execution time with std::set  " << (1000.0 * (clock() - time) / CLOCKS_PER_SEC) << " seconds" << std::endl;
 }
 
 bool    listSort::_hasDuplicates(std::list<int> list, int j)

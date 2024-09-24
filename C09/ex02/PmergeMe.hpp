@@ -4,6 +4,7 @@
 # include <cstdlib>
 # include <set>
 # include <iomanip>
+# include <sys/time.h>
 
 class listSort
 {
@@ -13,6 +14,7 @@ class listSort
         listSort(listSort &obj);
         listSort &operator=(listSort &src);
         ~listSort();
+
         //  list
         void    sortList(std::list<int> &toSort);
         void    merge(std::list<int> &toSort);
@@ -26,5 +28,5 @@ class listSort
     private:
         bool    _hasDuplicates(std::list<int>, int j);
         std::list<int>  _list;
-        std::set<int>  _list2;
+        std::set<int>   _list2;
 };
